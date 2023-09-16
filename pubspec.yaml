@@ -26,3 +26,4 @@ flutter:
         - asset: lib/assets/fonts/Gilroy-Light.otf
   assets:
     - lib/assets/images/
+    - lib/assets/json/

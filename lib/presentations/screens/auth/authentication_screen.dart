@@ -134,9 +134,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                   itemBuilder: (context, buttonIndex) => customButton(
                     context,
                     customButtonOnTap: () => Navigator.pushNamed(
-                        context, VerificationScreen.routeName, arguments: {
-                      'loginMethod': buttonIndex == 0 ? 'phone' : 'google'
-                    }),
+                        context, VerificationScreen.routeName,
+                        arguments: {
+                          'loginMethod': buttonIndex == 0 ? 'phone' : 'google',
+                          'loginInput': buttonIndex == 0
+                              ? isCountryCodeSelected! +
+                                  mobileNumberController.text
+                              : '',
+                        }),
                     customButtonTextValue:
                         buttonIndex == 0 ? 'Continue' : 'Continue with Google',
                     customButtonTextColor: buttonIndex == 0 ? text0 : primary60,

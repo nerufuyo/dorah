@@ -33,9 +33,12 @@ class MyApp extends StatelessWidget {
           case VerificationScreen.routeName:
             final args = settings.arguments as Map<String, dynamic>;
             final loginMethod = args['loginMethod'];
+            final loginInput = args['loginInput'];
             return PageRouteBuilder(
-                pageBuilder: (_, __, ___) =>
-                    VerificationScreen(loginMethod: loginMethod),
+                pageBuilder: (_, __, ___) => VerificationScreen(
+                      loginMethod: loginMethod,
+                      loginInput: loginInput,
+                    ),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return SlideTransition(

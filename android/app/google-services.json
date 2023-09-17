@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "96119526691",
+    "project_id": "dorah-fa7a5",
+    "storage_bucket": "dorah-fa7a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96119526691:android:9f72c5ae25a2a02d19e896",
+        "android_client_info": {
+          "package_name": "com.example.dorah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMBXyLMS3zgpiyqKGOOzvA2AhADIvHw_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

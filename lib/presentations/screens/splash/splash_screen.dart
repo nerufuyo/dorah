@@ -1,3 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
+
+import 'package:dorah/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:dorah/presentations/screens/auth/authentication_screen.dart';
 import 'package:dorah/presentations/widgets/components.dart';
 import 'package:dorah/styles/pallet.dart';
@@ -13,6 +17,12 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  void firebaseFetch() async {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
+
   void navigationToNextScreen() => Future.delayed(
         const Duration(seconds: 3),
         () => Navigator.pushNamed(context, AuthenticationScreen.routeName),
@@ -21,6 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    firebaseFetch();
     navigationToNextScreen();
   }
 

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Dorah Application',
+      title: 'Dorah',
       initialRoute: SplashScreen.routeName,
       onGenerateRoute: (settings) {
         switch (settings.name) {

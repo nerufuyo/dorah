@@ -1,4 +1,5 @@
 import 'package:dorah/presentations/screens/auth/authentication_screen.dart';
+import 'package:dorah/presentations/screens/auth/verification_screen.dart';
 import 'package:dorah/presentations/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,12 +21,32 @@ class MyApp extends StatelessWidget {
         switch (settings.name) {
           case SplashScreen.routeName:
             return MaterialPageRoute(builder: (_) => const SplashScreen());
+
+          // Auth
           case AuthenticationScreen.routeName:
             return PageRouteBuilder(
                 pageBuilder: (_, __, ___) => const AuthenticationScreen(),
-                transitionDuration: const Duration(milliseconds: 500),
+                transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);
+                });
+          case VerificationScreen.routeName:
+            final args = settings.arguments as Map<String, dynamic>;
+            final loginMethod = args['loginMethod'];
+            final loginInput = args['loginInput'];
+            return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => VerificationScreen(
+                      loginMethod: loginMethod,
+                      loginInput: loginInput,
+                    ),
+                transitionDuration: const Duration(milliseconds: 300),
+                transitionsBuilder: (_, animation, __, child) {
+                  return SlideTransition(
+                      position: Tween<Offset>(
+                        begin: const Offset(1, 0),
+                        end: Offset.zero,
+                      ).animate(animation),
+                      child: child);
                 });
 
           default:

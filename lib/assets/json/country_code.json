@@ -1,0 +1,192 @@
+{
+    "countries": [
+        {
+            "name": "United States",
+            "country_code": "+1"
+        },
+        {
+            "name": "Canada",
+            "country_code": "+1"
+        },
+        {
+            "name": "United Kingdom",
+            "country_code": "+44"
+        },
+        {
+            "name": "Australia",
+            "country_code": "+61"
+        },
+        {
+            "name": "Germany",
+            "country_code": "+49"
+        },
+        {
+            "name": "France",
+            "country_code": "+33"
+        },
+        {
+            "name": "Italy",
+            "country_code": "+39"
+        },
+        {
+            "name": "Spain",
+            "country_code": "+34"
+        },
+        {
+            "name": "India",
+            "country_code": "+91"
+        },
+        {
+            "name": "Indonesia",
+            "country_code": "+62"
+        },
+        {
+            "name": "China",
+            "country_code": "+86"
+        },
+        {
+            "name": "Japan",
+            "country_code": "+81"
+        },
+        {
+            "name": "South Korea",
+            "country_code": "+82"
+        },
+        {
+            "name": "Brazil",
+            "country_code": "+55"
+        },
+        {
+            "name": "Argentina",
+            "country_code": "+54"
+        },
+        {
+            "name": "Mexico",
+            "country_code": "+52"
+        },
+        {
+            "name": "Russia",
+            "country_code": "+7"
+        },
+        {
+            "name": "South Africa",
+            "country_code": "+27"
+        },
+        {
+            "name": "Nigeria",
+            "country_code": "+234"
+        },
+        {
+            "name": "Egypt",
+            "country_code": "+20"
+        },
+        {
+            "name": "Saudi Arabia",
+            "country_code": "+966"
+        },
+        {
+            "name": "United Arab Emirates",
+            "country_code": "+971"
+        },
+        {
+            "name": "Turkey",
+            "country_code": "+90"
+        },
+        {
+            "name": "Greece",
+            "country_code": "+30"
+        },
+        {
+            "name": "Sweden",
+            "country_code": "+46"
+        },
+        {
+            "name": "Norway",
+            "country_code": "+47"
+        },
+        {
+            "name": "Denmark",
+            "country_code": "+45"
+        },
+        {
+            "name": "Finland",
+            "country_code": "+358"
+        },
+        {
+            "name": "Poland",
+            "country_code": "+48"
+        },
+        {
+            "name": "Ukraine",
+            "country_code": "+380"
+        },
+        {
+            "name": "Belgium",
+            "country_code": "+32"
+        },
+        {
+            "name": "Netherlands",
+            "country_code": "+31"
+        },
+        {
+            "name": "Switzerland",
+            "country_code": "+41"
+        },
+        {
+            "name": "Austria",
+            "country_code": "+43"
+        },
+        {
+            "name": "Portugal",
+            "country_code": "+351"
+        },
+        {
+            "name": "Spain",
+            "country_code": "+34"
+        },
+        {
+            "name": "Ireland",
+            "country_code": "+353"
+        },
+        {
+            "name": "New Zealand",
+            "country_code": "+64"
+        },
+        {
+            "name": "Singapore",
+            "country_code": "+65"
+        },
+        {
+            "name": "Malaysia",
+            "country_code": "+60"
+        },
+        {
+            "name": "Thailand",
+            "country_code": "+66"
+        },
+        {
+            "name": "Philippines",
+            "country_code": "+63"
+        },
+        {
+            "name": "Vietnam",
+            "country_code": "+84"
+        },
+        {
+            "name": "Cambodia",
+            "country_code": "+855"
+        },
+        {
+            "name": "South Korea",
+            "country_code": "+82"
+        },
+        {
+            "name": "Taiwan",
+            "country_code": "+886"
+        },
+        {
+            "name": "Hong Kong",
+            "country_code": "+852"
+        }
+    ]
+}

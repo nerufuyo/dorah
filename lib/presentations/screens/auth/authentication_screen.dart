@@ -4,8 +4,10 @@ import 'package:dorah/presentations/screens/auth/verification_screen.dart';
 import 'package:dorah/presentations/widgets/components.dart';
 import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({super.key});
@@ -133,15 +135,15 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                   itemCount: 2,
                   itemBuilder: (context, buttonIndex) => customButton(
                     context,
-                    customButtonOnTap: () => Navigator.pushNamed(
-                        context, VerificationScreen.routeName,
-                        arguments: {
-                          'loginMethod': buttonIndex == 0 ? 'phone' : 'google',
-                          'loginInput': buttonIndex == 0
-                              ? isCountryCodeSelected! +
-                                  mobileNumberController.text
-                              : '',
-                        }),
+                    customButtonOnTap: () async {
+                      switch (buttonIndex) {
+                        case 0:
+                          break;
+                        case 1:
+                          loginWithGoogle();
+                          break;
+                      }
+                    },
                     customButtonTextValue:
                         buttonIndex == 0 ? 'Continue' : 'Continue with Google',
                     customButtonTextColor: buttonIndex == 0 ? text0 : primary60,
@@ -162,5 +164,33 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
         ),
       ),
     );
+  }
+
+  void loginWithGoogle() async {
+    GoogleSignInAccount? account = await GoogleSignIn().signIn();
+
+    // if (account != null) {
+    //   GoogleSignInAuthentication googleSignInAuthentication =
+    //       await account.authentication;
+
+    //   AuthCredential credential = GoogleAuthProvider.credential(
+    //       idToken: googleSignInAuthentication.idToken,
+    //       accessToken: googleSignInAuthentication.accessToken);
+
+    //   await FirebaseAuth.instance.signInWithCredential(credential);
+    // }
+
+    if (account == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Sign in failed'),
+        ),
+      );
+    } else {
+      Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
+        'loginMethod': 'google',
+        'loginInput': account.email,
+      });
+    }
   }
 }

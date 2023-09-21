@@ -140,6 +140,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                     customButtonOnTap: () async {
                       switch (buttonIndex) {
                         case 0:
+                          loginWithPhoneNumber();
                           break;
                         case 1:
                           loginWithGoogle();
@@ -168,28 +169,51 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
     );
   }
 
+  void loginWithPhoneNumber() async {
+    await Repository().signInWithPhoneNumber(
+      phoneNumber: isCountryCodeSelected! + mobileNumberController.text,
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        await FirebaseAuth.instance.signInWithCredential(credential);
+        Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
+          'loginMethod': 'phone',
+          'loginInput': isCountryCodeSelected! + mobileNumberController.text,
+          'verificationId': FirebaseAuth.instance.currentUser!.uid,
+        });
+      },
+      verificationFailed: (FirebaseAuthException e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(e.message!),
+          ),
+        );
+      },
+      codeSent: (String verificationId, int? resendToken) async {
+        Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
+          'loginMethod': 'phone',
+          'loginInput': isCountryCodeSelected! + mobileNumberController.text,
+          'verificationId': verificationId,
+        });
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(
+                content: customText(
+                    customTextValue: 'Timeout',
+                    customTextStyle: body2.copyWith(color: text0))))
+            .closed
+            .then((_) {
+          Navigator.pushNamed(context, AuthenticationScreen.routeName);
+        });
+      },
+    );
+  }
+
   void loginWithGoogle() async {
-    GoogleSignInAccount? account = await GoogleSignIn().signIn();
-
-    if (account != null) {
-      GoogleSignInAuthentication googleSignInAuthentication =
-          await account.authentication;
-
-      AuthCredential credential = GoogleAuthProvider.credential(
-          idToken: googleSignInAuthentication.idToken,
-          accessToken: googleSignInAuthentication.accessToken);
-
-      await FirebaseAuth.instance.signInWithCredential(credential);
-      Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
-        'loginMethod': 'google',
-        'loginInput': account.email,
-      });
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Sign in failed'),
-        ),
-      );
-    }
+    await Repository().signInWithGoogle().then((value) =>
+        Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
+          'loginMethod': 'google',
+          'loginInput': FirebaseAuth.instance.currentUser!.email,
+          'verificationId': FirebaseAuth.instance.currentUser!.uid,
+        }));
   }
 }

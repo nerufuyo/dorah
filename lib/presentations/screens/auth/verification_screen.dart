@@ -4,11 +4,16 @@ import 'package:dorah/styles/typography.dart';
 import 'package:flutter/material.dart';
 
 class VerificationScreen extends StatefulWidget {
-  const VerificationScreen(
-      {super.key, required this.loginMethod, required this.loginInput});
+  const VerificationScreen({
+    super.key,
+    required this.loginMethod,
+    required this.loginInput,
+    required this.verificationId,
+  });
   static const routeName = '/verification-screen';
   final String loginMethod;
   final String loginInput;
+  final String verificationId;
 
   @override
   State<VerificationScreen> createState() => _VerificationScreenState();
@@ -19,6 +24,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
   final TextEditingController secondCodeController = TextEditingController();
   final TextEditingController thirdCodeController = TextEditingController();
   final TextEditingController fourthCodeController = TextEditingController();
+  final TextEditingController fifthCodeController = TextEditingController();
+  final TextEditingController sixthCodeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,16 +63,16 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       ],
                     ),
                   ),
-                  customVerticalSpace(height: 48),
+                  customVerticalSpace(height: 28),
                   GridView.builder(
                     shrinkWrap: true,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4,
+                      crossAxisCount: 6,
                       crossAxisSpacing: 8,
                       mainAxisSpacing: 8,
                     ),
-                    itemCount: 4,
+                    itemCount: 6,
                     itemBuilder: (context, inputIndex) => Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: primary60),
@@ -79,7 +86,11 @@ class _VerificationScreenState extends State<VerificationScreen> {
                                   ? secondCodeController
                                   : inputIndex == 2
                                       ? thirdCodeController
-                                      : fourthCodeController,
+                                      : inputIndex == 3
+                                          ? fourthCodeController
+                                          : inputIndex == 4
+                                              ? fifthCodeController
+                                              : sixthCodeController,
                           textAlign: TextAlign.center,
                           keyboardType: TextInputType.number,
                           onChanged: (value) => setState(() {
@@ -102,6 +113,10 @@ class _VerificationScreenState extends State<VerificationScreen> {
                     ),
                   ),
                 ],
+              ),
+              customText(
+                customTextValue: widget.verificationId,
+                customTextStyle: body2.copyWith(color: text60),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

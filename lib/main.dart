@@ -33,10 +33,12 @@ class MyApp extends StatelessWidget {
             final args = settings.arguments as Map<String, dynamic>;
             final loginMethod = args['loginMethod'];
             final loginInput = args['loginInput'];
+            final verificationId = args['verificationId'];
             return PageRouteBuilder(
                 pageBuilder: (_, __, ___) => VerificationScreen(
                       loginMethod: loginMethod,
                       loginInput: loginInput,
+                      verificationId: verificationId,
                     ),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {

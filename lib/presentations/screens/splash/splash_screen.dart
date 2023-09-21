@@ -19,6 +19,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   void firebaseFetch() async {
     await Firebase.initializeApp(
+      name: 'dorah',
       options: DefaultFirebaseOptions.currentPlatform,
     );
   }

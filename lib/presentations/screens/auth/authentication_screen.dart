@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:dorah/data/model/country_code_model.dart';
 import 'package:dorah/data/repository/repository.dart';
 import 'package:dorah/presentations/screens/auth/verification_screen.dart';
@@ -169,28 +171,25 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   void loginWithGoogle() async {
     GoogleSignInAccount? account = await GoogleSignIn().signIn();
 
-    // if (account != null) {
-    //   GoogleSignInAuthentication googleSignInAuthentication =
-    //       await account.authentication;
+    if (account != null) {
+      GoogleSignInAuthentication googleSignInAuthentication =
+          await account.authentication;
 
-    //   AuthCredential credential = GoogleAuthProvider.credential(
-    //       idToken: googleSignInAuthentication.idToken,
-    //       accessToken: googleSignInAuthentication.accessToken);
+      AuthCredential credential = GoogleAuthProvider.credential(
+          idToken: googleSignInAuthentication.idToken,
+          accessToken: googleSignInAuthentication.accessToken);
 
-    //   await FirebaseAuth.instance.signInWithCredential(credential);
-    // }
-
-    if (account == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Sign in failed'),
-        ),
-      );
-    } else {
+      await FirebaseAuth.instance.signInWithCredential(credential);
       Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
         'loginMethod': 'google',
         'loginInput': account.email,
       });
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Sign in failed'),
+        ),
+      );
     }
   }
 }

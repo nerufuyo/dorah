@@ -10,12 +10,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Dorah Application',
+      title: 'Dorah',
       initialRoute: SplashScreen.routeName,
       onGenerateRoute: (settings) {
         switch (settings.name) {
@@ -34,10 +33,12 @@ class MyApp extends StatelessWidget {
             final args = settings.arguments as Map<String, dynamic>;
             final loginMethod = args['loginMethod'];
             final loginInput = args['loginInput'];
+            final verificationId = args['verificationId'];
             return PageRouteBuilder(
                 pageBuilder: (_, __, ___) => VerificationScreen(
                       loginMethod: loginMethod,
                       loginInput: loginInput,
+                      verificationId: verificationId,
                     ),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {

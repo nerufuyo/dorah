@@ -30,3 +30,5 @@ final List categoryLists = [
   {'name': 'Donate Blood', 'icon': 'lib/assets/icons/donate_blood.png'},
   {'name': 'Request Blood', 'icon': 'lib/assets/icons/request_blood.png'},
 ];
+
+final List rewardCategoryLists = ['Hero', 'Superhero', 'Legendary'];

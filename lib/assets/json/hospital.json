@@ -1,0 +1,264 @@
+{
+    "hospitals": [
+        {
+            "id": "H001",
+            "name": "Jakarta General Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Gatot Subroto No. 123",
+                "city": "Jakarta",
+                "province": "DKI Jakarta"
+            },
+            "longlat": "-6.2088, 106.8456",
+            "image": "https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/5418732504730/Mayapada%2520Hospitals%2520-%2520Jakarta%2520Selatan%2520-%2520COVID-19%2520Test%2520%2528Drive-Thru%2529-eff4478a-2ec7-4796-8c85-9c43ff81080f.jpeg?_src=imagekit&tr=dpr-2",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H002",
+            "name": "Surabaya Regional Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Darmo Baru No. 45",
+                "city": "Surabaya",
+                "province": "East Java"
+            },
+            "longlat": "-7.2575, 112.7521",
+            "image": "https://1.bp.blogspot.com/-YT767t2MZWA/Whb1PaNlocI/AAAAAAAAAJg/sacMUwIaAMIHg63C08ct8u90nX3l67BVgCLcBGAs/s1600/rsud%2Bdr%2Bsoetomo%2Bsurabaya.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H003",
+            "name": "Bandung Medical Center",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Cihampelas No. 67",
+                "city": "Bandung",
+                "province": "West Java"
+            },
+            "longlat": "-6.9039, 107.6186",
+            "image": "https://i.pinimg.com/originals/06/ed/7b/06ed7b6a66c8dc17c15c4f9a56a5317e.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H004",
+            "name": "Yogyakarta city Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Malioboro No. 89",
+                "city": "Yogyakarta",
+                "province": "DI Yogyakarta"
+            },
+            "longlat": "-7.7956, 110.3695",
+            "image": "https://1.bp.blogspot.com/-eLvGnP_erbs/X3WNHdSNhvI/AAAAAAAAOSc/MxdL9PzQOh0rK2hd-gCkIyaPsGrrNIotQCLcBGAsYHQ/s847/RS%2BJIH%2BYogyakarta%2BJAdwal%2BPraktek%2BDokter.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H005",
+            "name": "Semarang Regional Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Pandanaran No. 123",
+                "city": "Semarang",
+                "province": "Central Java"
+            },
+            "longlat": "-6.9754, 110.4287",
+            "image": "https://live.staticflickr.com/4445/36997957273_0aab201d21.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H006",
+            "name": "Makassar General Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Urip Sumoharjo No. 56",
+                "city": "Makassar",
+                "province": "South Sulawesi"
+            },
+            "longlat": "-5.1477, 119.4327",
+            "image": "https://primayahospital.com/wp-content/uploads/2018/04/preview-depan-2-Makassar.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H007",
+            "name": "Medan Medical Center",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Diponegoro No. 67",
+                "city": "Medan",
+                "province": "North Sumatra"
+            },
+            "longlat": "3.5952, 98.6722",
+            "image": "https://www.columbiaasia.com/indonesia/sites/default/files/hospital/hospitals-medan-overview.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H008",
+            "name": "Bali Island Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Bypass Ngurah Rai No. 123",
+                "city": "Denpasar",
+                "province": "Bali"
+            },
+            "longlat": "-8.6525, 115.2160",
+            "image": "https://www.villa-bali.com/guide/wp-content/uploads/2016/04/Bimc-nusadua-page-1-630x315.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H009",
+            "name": "Palembang Regional Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Pangeran Diponegoro No. 56",
+                "city": "Palembang",
+                "province": "South Sumatra"
+            },
+            "longlat": "-2.9761, 104.7458",
+            "image": "https://i.postimg.cc/w9LxTQ02/IMG-20180618-193246-328.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H010",
+            "name": "Batam city Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Raja Haji Fisabilillah No. 67",
+                "city": "Batam",
+                "province": "Riau Islands"
+            },
+            "longlat": "1.1060, 104.0343",
+            "image": "https://isioksigen.net/wp-content/uploads/2019/05/awal-bros-batam.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H011",
+            "name": "Malang General Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Soekarno-Hatta No. 123",
+                "city": "Malang",
+                "province": "East Java"
+            },
+            "longlat": "-7.9666, 112.6326",
+            "image": "https://www.khittah.co/wp-content/uploads/2020/08/Rumah-Sakit-Umum-Universitas-Muhammadiyah-Malang.-Foto-httphospital.umm_.ac_.id49c09a6272bea394-1024x548.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H012",
+            "name": "Padang Medical Center",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Khatib Sulaiman No. 56",
+                "city": "Padang",
+                "province": "West Sumatra"
+            },
+            "longlat": "-0.9516, 100.4260",
+            "image": "https://1.bp.blogspot.com/--2LZz3Pae8I/XWFZEQJesYI/AAAAAAAANDk/7ZXi-Ko8lJo6pKYV2A02vNzl9KxiL39wwCLcBGAs/s1600/padang%2Bjobs.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H013",
+            "name": "Samarinda Regional Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Pahlawan No. 67",
+                "city": "Samarinda",
+                "province": "East Kalimantan"
+            },
+            "longlat": "-0.4853, 117.1490",
+            "image": "https://www.ahstatic.com/photos/b5e4_ho_00_p_1024x768.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H014",
+            "name": "Manado General Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Sudirman No. 123",
+                "city": "Manado",
+                "province": "North Sulawesi"
+            },
+            "longlat": "1.4822, 124.8480",
+            "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmediamanado.com%2Fwp-content%2Fuploads%2F2017%2F02%2FIMG-20170202-WA0015.jpg&f=1&nofb=1&ipt=31aaa1322bbb0eeba3a7e0b56159a39f2b0a653dc50084c11d99d26b547eb3e4&ipo=images",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H015",
+            "name": "Pekanbaru Medical Center",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Riau No. 56",
+                "city": "Pekanbaru",
+                "province": "Riau"
+            },
+            "longlat": "0.4612, 101.4060",
+            "image": "https://www.garnesia.com/images/vendor/6010_b1ae372d2542737ec60e2277f9127e7b.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H016",
+            "name": "Balikpapan Regional Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Sudirman No. 123",
+                "city": "Balikpapan",
+                "province": "East Kalimantan"
+            },
+            "longlat": "-1.2687, 116.8347",
+            "image": "https://lh3.googleusercontent.com/npfVSG7dYXyielCOLaQoNcQ1kel2xpuCYewFWbHZz2yvYk5OOX56JTp_Z_tgTMHVr-HdTHXE=w1080-h608-p-no-v0",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H017",
+            "name": "Semarang Regional Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Pandanaran No. 123",
+                "city": "Semarang",
+                "province": "Central Java"
+            },
+            "longlat": "-6.9754, 110.4287",
+            "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wkc.co.id%2Fwp-content%2Fuploads%2F2022%2F11%2F1135x500px-RSSamsoe1.jpg&f=1&nofb=1&ipt=4f3dc6b7f12512f71e15fb81b68ac7593647058efa370c63c3714a0936e478cf&ipo=images",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H018",
+            "name": "Batam city Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Raja Haji Fisabilillah No. 67",
+                "city": "Batam",
+                "province": "Riau Islands"
+            },
+            "longlat": "1.1060, 104.0343",
+            "image": "https://2.bp.blogspot.com/-AlPMuNsRHsw/V-pJsknWdrI/AAAAAAAAHFg/NwsgvPzPtdwcxGo26ywbX-3vt2JcYQQ-gCLcB/s640/Awal_Bros_Hospital_at_Batam_Island_Indonesia.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H019",
+            "name": "Bali Island Hospital",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Bypass Ngurah Rai No. 123",
+                "city": "Denpasar",
+                "province": "Bali"
+            },
+            "longlat": "-8.6525, 115.2160",
+            "image": "https://www.villa-finder.com/magazine/wp-content/uploads/2019/07/rsz_rsup-sanglah-hospital-via-rsup-sanglah-hospital-1024x683.jpg",
+            "open_hour": "24/7"
+        },
+        {
+            "id": "H020",
+            "name": "Padang Medical Center",
+            "type": "General Hospital",
+            "location": {
+                "street": "Jl. Khatib Sulaiman No. 56",
+                "city": "Padang",
+                "province": "West Sumatra"
+            },
+            "longlat": "-0.9516, 100.4260",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/7d/08/0b/welcome-to-hw-hotel-padang.jpg?w=900&h=-1&s=1",
+            "open_hour": "24/7"
+        }
+    ]
+}

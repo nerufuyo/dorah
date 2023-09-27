@@ -1,0 +1,354 @@
+{
+    "rewards": [
+        {
+            "id": "001",
+            "title": "$10 Amazon Gift Card",
+            "points": 500,
+            "image_url": "[Amazon Gift Card Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "002",
+            "title": "Movie Night - 2 Tickets",
+            "points": 1000,
+            "image_url": "[Movie Night Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "003",
+            "title": "Starbucks Coffee Voucher",
+            "points": 750,
+            "image_url": "[Starbucks Voucher Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "004",
+            "title": "Fitness Class Pass",
+            "points": 800,
+            "image_url": "[Fitness Class Pass Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "005",
+            "title": "Weekend Getaway Package",
+            "points": 1500,
+            "image_url": "[Weekend Getaway Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "006",
+            "title": "1 Month Spotify Premium",
+            "points": 400,
+            "image_url": "[Spotify Premium Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "007",
+            "title": "Customized Phone Case",
+            "points": 600,
+            "image_url": "[Phone Case Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "008",
+            "title": "Cooking Class for Two",
+            "points": 750,
+            "image_url": "[Cooking Class Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "009",
+            "title": "$25 Uber Eats Gift Card",
+            "points": 1200,
+            "image_url": "[Uber Eats Gift Card Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "010",
+            "title": "Adventure Park Pass",
+            "points": 1500,
+            "image_url": "[Adventure Park Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "011",
+            "title": "Spa Day Package",
+            "points": 400,
+            "image_url": "[Spa Day Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "012",
+            "title": "3-Month Netflix Subscription",
+            "points": 600,
+            "image_url": "[Netflix Subscription Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "013",
+            "title": "Home Decor Gift Set",
+            "points": 1000,
+            "image_url": "[Home Decor Gift Set Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "014",
+            "title": "Virtual Reality Headset",
+            "points": 450,
+            "image_url": "[VR Headset Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "015",
+            "title": "Bookstore Gift Card",
+            "points": 600,
+            "image_url": "[Bookstore Gift Card Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "016",
+            "title": "Concert Tickets (2)",
+            "points": 800,
+            "image_url": "[Concert Tickets Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "017",
+            "title": "Smartwatch",
+            "points": 1000,
+            "image_url": "[Smartwatch Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "018",
+            "title": "Language Learning App Subscription",
+            "points": 750,
+            "image_url": "[Language Learning App Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "019",
+            "title": "Home Theater System",
+            "points": 1500,
+            "image_url": "[Home Theater System Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "020",
+            "title": "Weekend Yoga Retreat",
+            "points": 1200,
+            "image_url": "[Yoga Retreat Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "021",
+            "title": "Gourmet Cooking Class",
+            "points": 750,
+            "image_url": "[Gourmet Cooking Class Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "022",
+            "title": "Virtual Assistant Device",
+            "points": 1000,
+            "image_url": "[Virtual Assistant Device Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "023",
+            "title": "Art Supplies Set",
+            "points": 600,
+            "image_url": "[Art Supplies Set Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "024",
+            "title": "$50 Restaurant Gift Card",
+            "points": 500,
+            "image_url": "[Restaurant Gift Card Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "025",
+            "title": "Premium Headphones",
+            "points": 800,
+            "image_url": "[Premium Headphones Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "026",
+            "title": "Wine Tasting Experience",
+            "points": 750,
+            "image_url": "[Wine Tasting Experience Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "027",
+            "title": "Portable Bluetooth Speaker",
+            "points": 600,
+            "image_url": "[Bluetooth Speaker Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "028",
+            "title": "Outdoor Camping Gear",
+            "points": 1500,
+            "image_url": "[Camping Gear Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "029",
+            "title": "Language Translation Device",
+            "points": 1000,
+            "image_url": "[Translation Device Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "030",
+            "title": "DIY Home Improvement Kit",
+            "points": 600,
+            "image_url": "[Home Improvement Kit Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "031",
+            "title": "Gym Membership (1 month)",
+            "points": 300,
+            "image_url": "[Gym Membership Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "032",
+            "title": "Movie Streaming Subscription (3 months)",
+            "points": 700,
+            "image_url": "[Movie Streaming Subscription Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "033",
+            "title": "Tech Gadgets Mystery Box",
+            "points": 1100,
+            "image_url": "[Tech Gadgets Mystery Box Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "034",
+            "title": "Online Course Enrollment",
+            "points": 400,
+            "image_url": "[Online Course Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "035",
+            "title": "$15 Starbucks Gift Card",
+            "points": 750,
+            "image_url": "[Starbucks Gift Card Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "036",
+            "title": "Luxury Spa Weekend",
+            "points": 2000,
+            "image_url": "[Luxury Spa Weekend Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "037",
+            "title": "Wireless Earbuds",
+            "points": 350,
+            "image_url": "[Wireless Earbuds Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "038",
+            "title": "Concert VIP Pass",
+            "points": 900,
+            "image_url": "[Concert VIP Pass Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "039",
+            "title": "Smart Home Starter Kit",
+            "points": 1300,
+            "image_url": "[Smart Home Kit Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "040",
+            "title": "$20 Amazon Gift Card",
+            "points": 900,
+            "image_url": "[Amazon Gift Card Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "041",
+            "title": "Language Immersion Trip",
+            "points": 2500,
+            "image_url": "[Language Immersion Trip Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "042",
+            "title": "Home Office Upgrade Bundle",
+            "points": 600,
+            "image_url": "[Home Office Bundle Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "043",
+            "title": "Premium Coffee Maker",
+            "points": 850,
+            "image_url": "[Coffee Maker Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "044",
+            "title": "Adventure Travel Package",
+            "points": 1800,
+            "image_url": "[Adventure Travel Package Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "045",
+            "title": "Yoga and Meditation Retreat",
+            "points": 1200,
+            "image_url": "[Yoga Retreat Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "046",
+            "title": "Custom Engraved Jewelry",
+            "points": 400,
+            "image_url": "[Custom Jewelry Image URL]",
+            "category": "Hero"
+        },
+        {
+            "id": "047",
+            "title": "Virtual Reality Gaming Console",
+            "points": 950,
+            "image_url": "[VR Gaming Console Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "048",
+            "title": "$25 Restaurant Gift Card",
+            "points": 1200,
+            "image_url": "[Restaurant Gift Card Image URL]",
+            "category": "Superhero"
+        },
+        {
+            "id": "049",
+            "title": "Home Theater Sound System",
+            "points": 1800,
+            "image_url": "[Home Theater Sound System Image URL]",
+            "category": "Legendary"
+        },
+        {
+            "id": "050",
+            "title": "Painting Workshop with an Artist",
+            "points": 550,
+            "image_url": "[Painting Workshop Image URL]",
+            "category": "Hero"
+        }
+    ]
+}

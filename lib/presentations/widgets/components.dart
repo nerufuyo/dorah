@@ -12,11 +12,13 @@ Text customText({
   required customTextValue,
   customTextStyle,
   customTextAlign,
+  customMaxLines,
 }) {
   return Text(
     customTextValue,
     style: customTextStyle ?? heading1,
     textAlign: customTextAlign ?? TextAlign.start,
+    maxLines: customMaxLines,
   );
 }
 
@@ -24,6 +26,8 @@ InkWell customButton(
   context, {
   required customButtonOnTap,
   required customButtonTextValue,
+  customButtonPadding,
+  customButtonRadius,
   customButtonTextColor,
   customButtonColor,
   customButtonBorderColor,
@@ -39,12 +43,13 @@ InkWell customButton(
         border: Border.all(
           color: customButtonBorderColor ?? primary60,
         ),
-        borderRadius: BorderRadius.circular(1000),
+        borderRadius: customButtonRadius ?? BorderRadius.circular(1000),
       ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 24,
-        vertical: 16,
-      ),
+      padding: customButtonPadding ??
+          const EdgeInsets.symmetric(
+            horizontal: 24,
+            vertical: 16,
+          ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

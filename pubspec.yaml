@@ -16,6 +16,9 @@ dependencies:
   cloud_firestore: ^4.9.1
   google_sign_in: ^6.1.5
   iconsax: ^0.0.8
+  flutter_carousel_widget: ^2.1.0
+  cached_network_image: ^3.3.0
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:

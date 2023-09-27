@@ -13,12 +13,14 @@ Text customText({
   customTextStyle,
   customTextAlign,
   customMaxLines,
+  customTextOverflow,
 }) {
   return Text(
     customTextValue,
     style: customTextStyle ?? heading1,
     textAlign: customTextAlign ?? TextAlign.start,
     maxLines: customMaxLines,
+    overflow: customTextOverflow,
   );
 }
 

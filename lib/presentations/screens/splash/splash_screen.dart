@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:dorah/firebase_options.dart';
+import 'package:dorah/presentations/screens/main/main_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:dorah/presentations/screens/auth/authentication_screen.dart';
 import 'package:dorah/presentations/widgets/components.dart';
@@ -26,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void navigationToNextScreen() => Future.delayed(
         const Duration(seconds: 3),
-        () => Navigator.pushNamed(context, AuthenticationScreen.routeName),
+        () => Navigator.pushNamed(context, MainScreen.routeName),
       );
 
   @override

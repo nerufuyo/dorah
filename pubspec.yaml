@@ -15,6 +15,7 @@ dependencies:
   firebase_auth: ^4.9.0
   cloud_firestore: ^4.9.1
   google_sign_in: ^6.1.5
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
@@ -29,5 +30,6 @@ flutter:
         - asset: lib/assets/fonts/Gilroy-ExtraBold.otf
         - asset: lib/assets/fonts/Gilroy-Light.otf
   assets:
+    - lib/assets/icons/
     - lib/assets/images/
     - lib/assets/json/

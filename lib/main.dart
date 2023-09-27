@@ -1,5 +1,6 @@
 import 'package:dorah/presentations/screens/auth/authentication_screen.dart';
 import 'package:dorah/presentations/screens/auth/verification_screen.dart';
+import 'package:dorah/presentations/screens/main_screen.dart';
 import 'package:dorah/presentations/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Dorah',
-      initialRoute: SplashScreen.routeName,
+      initialRoute: MainScreen.routeName,
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case SplashScreen.routeName:
@@ -48,6 +49,13 @@ class MyApp extends StatelessWidget {
                         end: Offset.zero,
                       ).animate(animation),
                       child: child);
+                });
+          case MainScreen.routeName:
+            return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => const MainScreen(),
+                transitionDuration: const Duration(milliseconds: 300),
+                transitionsBuilder: (_, animation, __, child) {
+                  return FadeTransition(opacity: animation, child: child);
                 });
 
           default:

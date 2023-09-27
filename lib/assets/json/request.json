@@ -10,7 +10,8 @@
             "longlat": "-6.2088, 106.8456",
             "image": "https://kaitlinzhang.com/wp-content/uploads/2017/03/how-to-take-a-profile-photo-personal-branding-kaitlin-zhang-15-1024x683.jpg",
             "hospital_id": "H001",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C001"
         },
         {
             "id": "BR002",
@@ -22,7 +23,8 @@
             "longlat": "-7.2575, 112.7521",
             "image": "https://writestylesonline.com/wp-content/uploads/2016/08/Follow-These-Steps-for-a-Flawless-Professional-Profile-Picture.jpg",
             "hospital_id": "H002",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C002"
         },
         {
             "id": "BR003",
@@ -34,7 +36,8 @@
             "longlat": "-6.9039, 107.6186",
             "image": "https://kaitlinzhang.com/wp-content/uploads/2017/05/how-to-take-a-profile-photo-personal-branding-kaitlin-zhang.jpg",
             "hospital_id": "H003",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C003"
         },
         {
             "id": "BR004",
@@ -46,7 +49,8 @@
             "longlat": "-7.7956, 110.3695",
             "image": "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg",
             "hospital_id": "H004",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C004"
         },
         {
             "id": "BR005",
@@ -58,7 +62,8 @@
             "longlat": "-6.9754, 110.4287",
             "image": "https://www.ninjaonlinedating.com/blog/wp-content/uploads/2019/08/BestDatingProfilePhotosForMenKRAK.jpg",
             "hospital_id": "H005",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C005"
         },
         {
             "id": "BR006",
@@ -70,7 +75,8 @@
             "longlat": "-5.1477, 119.4327",
             "image": "https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg",
             "hospital_id": "H006",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C006"
         },
         {
             "id": "BR007",
@@ -82,7 +88,8 @@
             "longlat": "3.5952, 98.6722",
             "image": "https://i.pinimg.com/originals/07/33/ba/0733ba760b29378474dea0fdbcb97107.png",
             "hospital_id": "H007",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C007"
         },
         {
             "id": "BR008",
@@ -94,7 +101,8 @@
             "longlat": "-8.6525, 115.2160",
             "image": "https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_0.jpg",
             "hospital_id": "H008",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C008"
         },
         {
             "id": "BR009",
@@ -106,7 +114,8 @@
             "longlat": "-2.9761, 104.7458",
             "image": "https://www.pngitem.com/pimgs/m/348-3481514_circle-profile-girl-hd-png-download.png",
             "hospital_id": "H009",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C009"
         },
         {
             "id": "BR010",
@@ -118,7 +127,8 @@
             "longlat": "1.1060, 104.0343",
             "image": "https://www.maturitydating.co.uk/wp-content/uploads/2016/09/shutterstock_341919467.jpg",
             "hospital_id": "H010",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C010"
         },
         {
             "id": "BR011",
@@ -130,7 +140,8 @@
             "longlat": "-7.9666, 112.6326",
             "image": "https://www.hawtcelebs.com/wp-content/uploads/2011/10/Olivia-Wilde-at-In-Time-Premiere-4.jpg",
             "hospital_id": "H011",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C011"
         },
         {
             "id": "BR012",
@@ -142,7 +153,8 @@
             "longlat": "-0.9516, 100.4260",
             "image": "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg",
             "hospital_id": "H012",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C012"
         },
         {
             "id": "BR013",
@@ -154,7 +166,8 @@
             "longlat": "-0.4853, 117.1490",
             "image": "https://i.pinimg.com/originals/75/0a/61/750a61476800271035cd540c951dff76.jpg",
             "hospital_id": "H013",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C013"
         },
         {
             "id": "BR014",
@@ -166,7 +179,8 @@
             "longlat": "1.4822, 124.8480",
             "image": "https://www.wallpapertip.com/wmimgs/50-501880_cute-girl-profile-pictures-for-facebook-cute-girls.jpg",
             "hospital_id": "H014",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C014"
         },
         {
             "id": "BR015",
@@ -178,7 +192,8 @@
             "longlat": "0.4612, 101.4060",
             "image": "https://i.insider.com/56a8f50ddd089553198b4731?width=1200",
             "hospital_id": "H015",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C015"
         },
         {
             "id": "BR016",
@@ -190,7 +205,8 @@
             "longlat": "-1.2687, 116.8347",
             "image": "https://www.nicepng.com/png/full/182-1829287_cammy-lin-ux-designer-circle-picture-profile-girl.png",
             "hospital_id": "H016",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C016"
         },
         {
             "id": "BR017",
@@ -202,7 +218,8 @@
             "longlat": "-6.9754, 110.4287",
             "image": "https://www.teachaway.com/sites/default/files/styles/header_image_1200/public/2018-07/profile_picture.jpg?itok=fP5dCrMk",
             "hospital_id": "H017",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C017"
         },
         {
             "id": "BR018",
@@ -214,7 +231,8 @@
             "longlat": "1.1060, 104.0343",
             "image": "https://www.rosalindwhitephotography.com/uploads/5/1/9/9/5199699/roz-7990_orig.jpg",
             "hospital_id": "H018",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C018"
         },
         {
             "id": "BR019",
@@ -226,7 +244,8 @@
             "longlat": "-8.6525, 115.2160",
             "image": "http://mfgaspar.github.io/images/profile.jpg",
             "hospital_id": "H019",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C019"
         },
         {
             "id": "BR020",
@@ -238,7 +257,8 @@
             "longlat": "-0.9516, 100.4260",
             "image": "https://bestprofilepictures.com/wp-content/uploads/2023/04/Anime-Mask-Dp.jpg",
             "hospital_id": "H020",
-            "create_date": "2023-09-27"
+            "create_date": "2023-09-27",
+            "chat_id": "C020"
         }
     ]
 }

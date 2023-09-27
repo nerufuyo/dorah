@@ -9,6 +9,7 @@ class Requests {
   final String image;
   final String hospitalId;
   final String createDate;
+  final String chatId;
 
   Requests({
     required this.id,
@@ -21,6 +22,7 @@ class Requests {
     required this.image,
     required this.hospitalId,
     required this.createDate,
+    required this.chatId,
   });
 
   factory Requests.fromJson(Map<String, dynamic> json) => Requests(
@@ -34,6 +36,7 @@ class Requests {
         image: json["image"],
         hospitalId: json["hospital_id"],
         createDate: json["create_date"],
+        chatId: json["chat_id"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -47,5 +50,6 @@ class Requests {
         "image": image,
         "hospital_id": hospitalId,
         "create_date": createDate,
+        "chat_id": chatId,
       };
 }

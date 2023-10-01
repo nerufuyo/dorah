@@ -3,7 +3,6 @@
 import 'package:dorah/firebase_options.dart';
 import 'package:dorah/presentations/screens/main/main_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:dorah/presentations/screens/auth/authentication_screen.dart';
 import 'package:dorah/presentations/widgets/components.dart';
 import 'package:dorah/styles/pallet.dart';
 import 'package:flutter/material.dart';

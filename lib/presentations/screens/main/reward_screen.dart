@@ -6,7 +6,6 @@ import 'package:dorah/presentations/widgets/components.dart';
 import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class RewardScreen extends StatefulWidget {
   const RewardScreen({super.key});
@@ -35,7 +34,11 @@ class _RewardScreenState extends State<RewardScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildHeader(),
+      appBar: customSimpleAppBar(
+        appBarTitle: 'Rewards',
+        isInfoShow: true,
+        ontapped: () {},
+      ),
       body: SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(
@@ -339,24 +342,6 @@ class _RewardScreenState extends State<RewardScreen>
           ),
         ),
       ),
-    );
-  }
-
-  AppBar _buildHeader() {
-    return AppBar(
-      automaticallyImplyLeading: false,
-      backgroundColor: Colors.white,
-      elevation: 0,
-      title: customText(
-        customTextValue: 'My Reward',
-        customTextStyle: heading3.copyWith(color: text60),
-      ),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset('lib/assets/icons/info_outlined.svg'),
-        )
-      ],
     );
   }
 }

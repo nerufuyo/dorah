@@ -85,7 +85,7 @@ class _MessageScreenState extends State<MessageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildHeader(),
+      appBar: customSimpleAppBar(appBarTitle: 'Messages'),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -139,18 +139,6 @@ class _MessageScreenState extends State<MessageScreen> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  AppBar _buildHeader() {
-    return AppBar(
-      automaticallyImplyLeading: false,
-      backgroundColor: Colors.white,
-      elevation: 0,
-      title: customText(
-        customTextValue: 'Message',
-        customTextStyle: heading3.copyWith(color: text60),
       ),
     );
   }

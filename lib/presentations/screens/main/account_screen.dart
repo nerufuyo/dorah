@@ -18,6 +18,7 @@ class _AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customSimpleAppBar(appBarTitle: 'Account'),
       body: SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,
@@ -35,7 +36,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       Container(
                         width: 60,
                         height: 60,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: primary60,
                           shape: BoxShape.circle,
                         ),

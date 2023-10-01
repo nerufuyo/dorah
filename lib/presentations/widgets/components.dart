@@ -2,6 +2,7 @@ import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:iconsax/iconsax.dart';
 
 SizedBox customVerticalSpace({required double height}) =>
     SizedBox(height: height);
@@ -94,5 +95,33 @@ InkWell customSimpleListMenu({
         size: 16,
       ),
     ),
+  );
+}
+
+AppBar customSimpleAppBar({
+  required appBarTitle,
+  isInfoShow = false,
+  ontapped,
+}) {
+  return AppBar(
+    automaticallyImplyLeading: false,
+    backgroundColor: Colors.white,
+    elevation: 0,
+    title: customText(
+      customTextValue: appBarTitle,
+      customTextStyle: heading3.copyWith(color: text60),
+    ),
+    actions: [
+      Visibility(
+        visible: isInfoShow,
+        child: InkWell(
+          onTap: ontapped,
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Icon(Iconsax.info_circle4, color: text60),
+          ),
+        ),
+      )
+    ],
   );
 }

@@ -19,6 +19,8 @@ dependencies:
   flutter_carousel_widget: ^2.1.0
   cached_network_image: ^3.3.0
   intl: ^0.18.1
+  timeago: ^3.5.0
+  localstorage: ^4.0.1+4
 
 dev_dependencies:
   flutter_test:

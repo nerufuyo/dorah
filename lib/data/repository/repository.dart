@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dorah/data/model/message_model.dart';
 import 'package:dorah/data/model/country_code_model.dart';
 import 'package:dorah/data/model/hospital_model.dart';
 import 'package:dorah/data/model/request_model.dart';
@@ -66,6 +67,18 @@ class Repository {
       rewards.add(Rewards.fromJson(item));
     }
     return rewards;
+  }
+
+  Future<List<Message>> getMessages() async {
+    final response =
+        await rootBundle.loadString('lib/assets/json/message.json');
+
+    final data = json.decode(response)['messages'];
+    final List<Message> messages = [];
+    for (var item in data) {
+      messages.add(Message.fromJson(item));
+    }
+    return messages;
   }
 
   Future<List<Country>> getCountryCodes() async {

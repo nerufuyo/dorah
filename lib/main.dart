@@ -1,6 +1,11 @@
 import 'package:dorah/presentations/screens/auth/authentication_screen.dart';
 import 'package:dorah/presentations/screens/auth/verification_screen.dart';
-import 'package:dorah/presentations/screens/main_screen.dart';
+import 'package:dorah/presentations/screens/main/account_screen.dart';
+import 'package:dorah/presentations/screens/main/home_screen.dart';
+import 'package:dorah/presentations/screens/main/main_screen.dart';
+import 'package:dorah/presentations/screens/main/message_screen.dart';
+import 'package:dorah/presentations/screens/main/reward_screen.dart';
+import 'package:dorah/presentations/screens/main/ticket.screen.dart';
 import 'package:dorah/presentations/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -53,6 +58,41 @@ class MyApp extends StatelessWidget {
           case MainScreen.routeName:
             return PageRouteBuilder(
                 pageBuilder: (_, __, ___) => const MainScreen(),
+                transitionDuration: const Duration(milliseconds: 300),
+                transitionsBuilder: (_, animation, __, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                });
+          case HomeScreen.routeName:
+            return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => const HomeScreen(),
+                transitionDuration: const Duration(milliseconds: 300),
+                transitionsBuilder: (_, animation, __, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                });
+          case RewardScreen.routeName:
+            return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => const RewardScreen(),
+                transitionDuration: const Duration(milliseconds: 300),
+                transitionsBuilder: (_, animation, __, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                });
+          case MessageScreen.routeName:
+            return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => const MessageScreen(),
+                transitionDuration: const Duration(milliseconds: 300),
+                transitionsBuilder: (_, animation, __, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                });
+          case TicketScreen.routeName:
+            return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => const TicketScreen(),
+                transitionDuration: const Duration(milliseconds: 300),
+                transitionsBuilder: (_, animation, __, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                });
+          case AccountScreen.routeName:
+            return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => const AccountScreen(),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);

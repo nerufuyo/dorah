@@ -1,6 +1,7 @@
 import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 SizedBox customVerticalSpace({required double height}) =>
     SizedBox(height: height);
@@ -67,6 +68,30 @@ InkWell customButton(
           if (customRightIcon != null) customHorizontalSpace(width: 8),
           if (customRightIcon != null) customRightIcon,
         ],
+      ),
+    ),
+  );
+}
+
+InkWell customSimpleListMenu({
+  required onTapped,
+  required listImage,
+  required listTitle,
+}) {
+  return InkWell(
+    onTap: onTapped,
+    child: ListTile(
+      leading: SvgPicture.asset(
+        listImage,
+      ),
+      minLeadingWidth: 0,
+      title: customText(
+        customTextValue: listTitle,
+        customTextStyle: body1,
+      ),
+      trailing: const Icon(
+        Icons.arrow_forward_ios_rounded,
+        size: 16,
       ),
     ),
   );

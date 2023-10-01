@@ -32,3 +32,33 @@ final List categoryLists = [
 ];
 
 final List rewardCategoryLists = ['Hero', 'Superhero', 'Legendary'];
+
+final List accountMainCategoryLists = [
+  {
+    'name': 'Profile',
+    'icon': 'lib/assets/icons/profile_outlined.svg',
+  },
+  {
+    'name': 'History',
+    'icon': 'lib/assets/icons/history_outlined.svg',
+  },
+  {
+    'name': 'Password',
+    'icon': 'lib/assets/icons/password_outlined.svg',
+  },
+  {
+    'name': 'Notification',
+    'icon': 'lib/assets/icons/bell_outlined.svg',
+  },
+];
+
+final List accountMoreCategoryLists = [
+  {
+    'name': 'Rate and Reviews',
+    'icon': 'lib/assets/icons/profile_outlined.svg',
+  },
+  {
+    'name': 'Help',
+    'icon': 'lib/assets/icons/stars_outlined.svg',
+  },
+];

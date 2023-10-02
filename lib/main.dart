@@ -97,8 +97,10 @@ class MyApp extends StatelessWidget {
                   return FadeTransition(opacity: animation, child: child);
                 });
           case AccountScreen.routeName:
+            final args = settings.arguments as Map<String, dynamic>;
+            final userId = args['userId'];
             return PageRouteBuilder(
-                pageBuilder: (_, __, ___) => const AccountScreen(),
+                pageBuilder: (_, __, ___) => AccountScreen(userId: userId),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);

@@ -33,7 +33,7 @@ class _MainScreenState extends State<MainScreen> {
       const RewardScreen(),
       const MessageScreen(),
       const TicketScreen(),
-      const AccountScreen(),
+      AccountScreen(userId: widget.userId),
     ];
 
     return WillPopScope(

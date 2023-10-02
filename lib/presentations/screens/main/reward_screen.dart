@@ -7,7 +7,6 @@ import 'package:dorah/presentations/widgets/shimmer.dart';
 import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
 
 class RewardScreen extends StatefulWidget {
   const RewardScreen({super.key});
@@ -36,7 +35,7 @@ class _RewardScreenState extends State<RewardScreen>
   void initState() {
     initializeTabController();
     Future.delayed(
-        const Duration(seconds: 2), () => setState(() => isShimmer = false));
+        const Duration(seconds: 1), () => setState(() => isShimmer = false));
     super.initState();
   }
 

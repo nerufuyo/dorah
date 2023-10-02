@@ -172,14 +172,16 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   }
 
   void loginWithPhone() async {
-    await Repository().loginUser(phone: mobileNumberController.text);
+    final response = await Repository().loginUser(
+        phone: '$isCountryCodeSelected${mobileNumberController.text}');
     if (mobileNumberController.text.isEmpty ||
-        mobileNumberController.text.length < 10) {
+        mobileNumberController.text.length < 10 ||
+        response.isEmpty) {
       setState(() => errorMessage = 'Please enter your phone number');
-    } else {
+    } else if (response.isNotEmpty) {
       Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
         'loginMethod': 'phone',
-        'loginInput': mobileNumberController.text,
+        'loginInput': '$isCountryCodeSelected${mobileNumberController.text}',
         'verificationId':
             'This is mock data. You can input any number as verification code.',
       });

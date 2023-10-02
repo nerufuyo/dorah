@@ -40,11 +40,13 @@ class MyApp extends StatelessWidget {
             final loginMethod = args['loginMethod'];
             final loginInput = args['loginInput'];
             final verificationId = args['verificationId'];
+            final userId = args['userId'];
             return PageRouteBuilder(
                 pageBuilder: (_, __, ___) => VerificationScreen(
                       loginMethod: loginMethod,
                       loginInput: loginInput,
                       verificationId: verificationId,
+                      userId: userId,
                     ),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
@@ -56,15 +58,19 @@ class MyApp extends StatelessWidget {
                       child: child);
                 });
           case MainScreen.routeName:
+            final args = settings.arguments as Map<String, dynamic>;
+            final userId = args['userId'];
             return PageRouteBuilder(
-                pageBuilder: (_, __, ___) => const MainScreen(),
+                pageBuilder: (_, __, ___) => MainScreen(userId: userId),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);
                 });
           case HomeScreen.routeName:
+            final args = settings.arguments as Map<String, dynamic>;
+            final userId = args['userId'];
             return PageRouteBuilder(
-                pageBuilder: (_, __, ___) => const HomeScreen(),
+                pageBuilder: (_, __, ___) => HomeScreen(userId: userId),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);

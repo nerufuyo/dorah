@@ -184,6 +184,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
         'loginInput': '$isCountryCodeSelected${mobileNumberController.text}',
         'verificationId':
             'This is mock data. You can input any number as verification code.',
+        'userId': response.first.id,
       });
     }
   }

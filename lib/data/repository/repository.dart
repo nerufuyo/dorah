@@ -5,11 +5,45 @@ import 'package:dorah/data/model/country_code_model.dart';
 import 'package:dorah/data/model/hospital_model.dart';
 import 'package:dorah/data/model/request_model.dart';
 import 'package:dorah/data/model/reward_model.dart';
+import 'package:dorah/data/model/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Repository {
+  Future<List<Users>> getUsers() async {
+    final response = await rootBundle.loadString('lib/assets/json/user.json');
+
+    final data = json.decode(response)['users'];
+    final List<Users> users = [];
+    for (var item in data) {
+      users.add(Users.fromJson(item));
+    }
+    return users;
+  }
+
+  Future<Users> getUserById({required id}) async {
+    final response = await rootBundle.loadString('lib/assets/json/user.json');
+
+    final data = json.decode(response)['users'];
+    final List<Users> users = [];
+    for (var item in data) {
+      users.add(Users.fromJson(item));
+    }
+    return users.firstWhere((element) => element.id == id);
+  }
+
+  Future<List<Users>> loginUser({required phone}) async {
+    final response = await rootBundle.loadString('lib/assets/json/user.json');
+
+    final data = json.decode(response)['users'];
+    final List<Users> users = [];
+    for (var item in data) {
+      users.add(Users.fromJson(item));
+    }
+    return users.where((element) => element.phone == phone).toList();
+  }
+
   Future<List<Requests>> getRequests() async {
     final response =
         await rootBundle.loadString('lib/assets/json/request.json');
@@ -105,18 +139,18 @@ class Repository {
     await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
-  Future<void> signInWithPhoneNumber(
-      {required String phoneNumber,
-      required Function(PhoneAuthCredential) verificationCompleted,
-      required Function(FirebaseAuthException) verificationFailed,
-      required Function(String, int?) codeSent,
-      required Function(String) codeAutoRetrievalTimeout}) async {
-    await FirebaseAuth.instance.verifyPhoneNumber(
-      phoneNumber: phoneNumber,
-      verificationCompleted: verificationCompleted,
-      verificationFailed: verificationFailed,
-      codeSent: codeSent,
-      codeAutoRetrievalTimeout: codeAutoRetrievalTimeout,
-    );
-  }
+  // Future<void> signInWithPhoneNumber(
+  //     {required String phoneNumber,
+  //     required Function(PhoneAuthCredential) verificationCompleted,
+  //     required Function(FirebaseAuthException) verificationFailed,
+  //     required Function(String, int?) codeSent,
+  //     required Function(String) codeAutoRetrievalTimeout}) async {
+  //   await FirebaseAuth.instance.verifyPhoneNumber(
+  //     phoneNumber: phoneNumber,
+  //     verificationCompleted: verificationCompleted,
+  //     verificationFailed: verificationFailed,
+  //     codeSent: codeSent,
+  //     codeAutoRetrievalTimeout: codeAutoRetrievalTimeout,
+  //   );
+  // }
 }

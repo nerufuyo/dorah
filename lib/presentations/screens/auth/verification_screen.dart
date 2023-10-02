@@ -1,3 +1,4 @@
+import 'package:dorah/presentations/screens/main/main_screen.dart';
 import 'package:dorah/presentations/widgets/components.dart';
 import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
@@ -20,12 +21,8 @@ class VerificationScreen extends StatefulWidget {
 }
 
 class _VerificationScreenState extends State<VerificationScreen> {
-  final TextEditingController firstCodeController = TextEditingController();
-  final TextEditingController secondCodeController = TextEditingController();
-  final TextEditingController thirdCodeController = TextEditingController();
-  final TextEditingController fourthCodeController = TextEditingController();
-  final TextEditingController fifthCodeController = TextEditingController();
-  final TextEditingController sixthCodeController = TextEditingController();
+  final List textFields = List.generate(6, (index) => TextEditingController());
+  String errorMessage = '';
 
   @override
   Widget build(BuildContext context) {
@@ -64,59 +61,65 @@ class _VerificationScreenState extends State<VerificationScreen> {
                     ),
                   ),
                   customVerticalSpace(height: 28),
-                  GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 6,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8,
-                    ),
-                    itemCount: 6,
-                    itemBuilder: (context, inputIndex) => Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: primary60),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Center(
-                        child: TextFormField(
-                          controller: inputIndex == 0
-                              ? firstCodeController
-                              : inputIndex == 1
-                                  ? secondCodeController
-                                  : inputIndex == 2
-                                      ? thirdCodeController
-                                      : inputIndex == 3
-                                          ? fourthCodeController
-                                          : inputIndex == 4
-                                              ? fifthCodeController
-                                              : sixthCodeController,
-                          textAlign: TextAlign.center,
-                          keyboardType: TextInputType.number,
-                          onChanged: (value) => setState(() {
-                            if (value.isNotEmpty) {
-                              if (inputIndex == 3) {
-                                FocusScope.of(context)
-                                    .requestFocus(FocusNode());
-                              }
-
-                              FocusScope.of(context).nextFocus();
-                            }
-                          }),
-                          style: heading1,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.all(8),
+                  Column(
+                    children: [
+                      GridView.builder(
+                        shrinkWrap: true,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 6,
+                          crossAxisSpacing: 8,
+                          mainAxisSpacing: 8,
+                        ),
+                        itemCount: 6,
+                        itemBuilder: (context, inputIndex) => Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: primary60),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Center(
+                            child: TextField(
+                              controller: textFields[inputIndex],
+                              keyboardType: TextInputType.number,
+                              maxLength: 1,
+                              textAlign: TextAlign.center,
+                              style: heading5.copyWith(color: primary60),
+                              decoration: const InputDecoration(
+                                counterText: '',
+                                border: InputBorder.none,
+                              ),
+                              onChanged: (value) {
+                                if (value.isNotEmpty) {
+                                  if (inputIndex == 5) {
+                                    FocusScope.of(context)
+                                        .requestFocus(FocusNode());
+                                  }
+                                  FocusScope.of(context).nextFocus();
+                                }
+                              },
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                      customVerticalSpace(height: 8),
+                      Visibility(
+                        visible: errorMessage.isNotEmpty,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: customText(
+                            customTextValue: errorMessage,
+                            customTextStyle: body2.copyWith(color: Colors.red),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
               customText(
                 customTextValue: widget.verificationId,
                 customTextStyle: body2.copyWith(color: text60),
+                customTextAlign: TextAlign.center,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -132,7 +135,14 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       ),
                       customHorizontalSpace(width: 4),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content:
+                                  Text('This feature is not yet available.'),
+                            ),
+                          );
+                        },
                         child: customText(
                           customTextValue: 'Resend Code',
                           customTextStyle:
@@ -144,7 +154,15 @@ class _VerificationScreenState extends State<VerificationScreen> {
                   customVerticalSpace(height: 16),
                   customButton(
                     context,
-                    customButtonOnTap: () {},
+                    customButtonOnTap: () {
+                      if (textFields.every((element) => element.text.isEmpty)) {
+                        setState(() => errorMessage =
+                            'Please enter the verification code.');
+                      } else {
+                        setState(() => errorMessage = '');
+                        Navigator.pushNamed(context, MainScreen.routeName);
+                      }
+                    },
                     customButtonTextValue: 'Continue',
                   ),
                 ],

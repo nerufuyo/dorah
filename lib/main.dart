@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Dorah',
-      initialRoute: MainScreen.routeName,
+      initialRoute: SplashScreen.routeName,
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case SplashScreen.routeName:

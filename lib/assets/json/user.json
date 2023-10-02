@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "id": "US001",
+            "name": "Listyo Adi",
+            "email": "listyo.adi@dorah.com",
+            "phone": "08123456789",
+            "image": "lib/assets/images/imageProfile.jpeg"
+        },
+        {
+            "id": "US002",
+            "name": "Rizky Ramadhan",
+            "email": "rizky.ramadhan@dorah.com",
+            "phone": "08123456789",
+            "image": "lib/assets/images/imageProfile.jpeg"
+        }
+    ]
+}

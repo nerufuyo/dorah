@@ -6,7 +6,6 @@ import 'package:dorah/presentations/screens/auth/verification_screen.dart';
 import 'package:dorah/presentations/widgets/components.dart';
 import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -22,6 +21,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   final TextEditingController mobileNumberController = TextEditingController();
   final List<Country> countryCodes = [];
   String? isCountryCodeSelected = '+62';
+  String errorMessage = '';
 
   void fetchData() async {
     final data = await Repository().getCountryCodes();
@@ -83,6 +83,9 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           fillColor: primary10,
                           hintText: '82240xxxxxx',
                           hintStyle: body2.copyWith(color: text60),
+                          errorText:
+                              errorMessage.isNotEmpty ? errorMessage : null,
+                          errorStyle: body3.copyWith(color: Colors.red),
                           isDense: true,
                           prefix: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -139,7 +142,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                     customButtonOnTap: () async {
                       switch (buttonIndex) {
                         case 0:
-                          loginWithPhoneNumber();
+                          loginWithPhone();
                           break;
                         case 1:
                           loginWithGoogle();
@@ -168,51 +171,33 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
     );
   }
 
-  void loginWithPhoneNumber() async {
-    await Repository().signInWithPhoneNumber(
-      phoneNumber: isCountryCodeSelected! + mobileNumberController.text,
-      verificationCompleted: (PhoneAuthCredential credential) async {
-        await FirebaseAuth.instance.signInWithCredential(credential);
-        Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
-          'loginMethod': 'phone',
-          'loginInput': isCountryCodeSelected! + mobileNumberController.text,
-          'verificationId': FirebaseAuth.instance.currentUser!.uid,
-        });
-      },
-      verificationFailed: (FirebaseAuthException e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(e.message!),
-          ),
-        );
-      },
-      codeSent: (String verificationId, int? resendToken) async {
-        Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
-          'loginMethod': 'phone',
-          'loginInput': isCountryCodeSelected! + mobileNumberController.text,
-          'verificationId': verificationId,
-        });
-      },
-      codeAutoRetrievalTimeout: (String verificationId) {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(
-                content: customText(
-                    customTextValue: 'Timeout',
-                    customTextStyle: body2.copyWith(color: text0))))
-            .closed
-            .then((_) {
-          Navigator.pushNamed(context, AuthenticationScreen.routeName);
-        });
-      },
-    );
+  void loginWithPhone() async {
+    await Repository().loginUser(phone: mobileNumberController.text);
+    if (mobileNumberController.text.isEmpty ||
+        mobileNumberController.text.length < 10) {
+      setState(() => errorMessage = 'Please enter your phone number');
+    } else {
+      Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
+        'loginMethod': 'phone',
+        'loginInput': mobileNumberController.text,
+        'verificationId':
+            'This is mock data. You can input any number as verification code.',
+      });
+    }
   }
 
   void loginWithGoogle() async {
-    await Repository().signInWithGoogle().then((value) =>
-        Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
-          'loginMethod': 'google',
-          'loginInput': FirebaseAuth.instance.currentUser!.email,
-          'verificationId': FirebaseAuth.instance.currentUser!.uid,
-        }));
+    // await Repository().signInWithGoogle().then((value) =>
+    //     Navigator.pushNamed(context, VerificationScreen.routeName, arguments: {
+    //       'loginMethod': 'google',
+    //       'loginInput': FirebaseAuth.instance.currentUser!.email,
+    //       'verificationId': FirebaseAuth.instance.currentUser!.uid,
+    //     }));
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('This feature is not available yet'),
+        duration: Duration(seconds: 2),
+      ),
+    );
   }
 }

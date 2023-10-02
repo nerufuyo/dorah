@@ -95,3 +95,124 @@ ListView shimmerListView() {
     ),
   );
 }
+
+GridView shimmerTabBar() {
+  return GridView.builder(
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 3,
+      childAspectRatio: 2.5,
+      crossAxisSpacing: 16,
+    ),
+    padding: const EdgeInsets.symmetric(horizontal: 16),
+    shrinkWrap: true,
+    itemCount: 3,
+    itemBuilder: (context, index) => Shimmer.fromColors(
+      baseColor: primary10,
+      highlightColor: primary30,
+      child: Container(
+        decoration: BoxDecoration(
+          color: primary10,
+          borderRadius: BorderRadius.circular(40),
+        ),
+      ),
+    ),
+  );
+}
+
+SizedBox shimmerHorizontalListView() {
+  return SizedBox(
+    height: 180,
+    child: ListView.separated(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      scrollDirection: Axis.horizontal,
+      separatorBuilder: (context, index) => customHorizontalSpace(width: 16),
+      shrinkWrap: true,
+      itemCount: 5,
+      itemBuilder: (context, index) => Shimmer.fromColors(
+        baseColor: primary10,
+        highlightColor: primary30,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              width: 200,
+              height: 120,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: primary10,
+              ),
+            ),
+            customVerticalSpace(height: 8),
+            Container(
+              width: 200,
+              height: 16,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: primary10,
+              ),
+            ),
+            customVerticalSpace(height: 8),
+            Container(
+              width: 100,
+              height: 16,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: primary10,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+GridView customVerticalListView() {
+  return GridView.builder(
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 2,
+      childAspectRatio: 0.8,
+      crossAxisSpacing: 16,
+      mainAxisSpacing: 16,
+    ),
+    padding: const EdgeInsets.symmetric(horizontal: 16),
+    shrinkWrap: true,
+    itemCount: 3,
+    itemBuilder: (context, index) => Shimmer.fromColors(
+        baseColor: primary10,
+        highlightColor: primary30,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              width: 200,
+              height: 145,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: primary10,
+              ),
+            ),
+            customVerticalSpace(height: 8),
+            Container(
+              width: 200,
+              height: 16,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: primary10,
+              ),
+            ),
+            customVerticalSpace(height: 8),
+            Container(
+              width: 100,
+              height: 16,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: primary10,
+              ),
+            ),
+          ],
+        )),
+  );
+}

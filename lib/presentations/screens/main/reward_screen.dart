@@ -3,9 +3,11 @@ import 'package:dorah/common/constant.dart';
 import 'package:dorah/data/model/reward_model.dart';
 import 'package:dorah/data/repository/repository.dart';
 import 'package:dorah/presentations/widgets/components.dart';
+import 'package:dorah/presentations/widgets/shimmer.dart';
 import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class RewardScreen extends StatefulWidget {
   const RewardScreen({super.key});
@@ -20,14 +22,21 @@ class _RewardScreenState extends State<RewardScreen>
   late TabController tabController;
   int currentPoint = 271;
   int totalPoint = 500;
+  bool isShimmer = true;
 
-  @override
-  void initState() {
+  void initializeTabController() {
     tabController = TabController(
       length: rewardCategoryLists.length,
       vsync: this,
       initialIndex: 0,
     );
+  }
+
+  @override
+  void initState() {
+    initializeTabController();
+    Future.delayed(
+        const Duration(seconds: 2), () => setState(() => isShimmer = false));
     super.initState();
   }
 
@@ -44,20 +53,54 @@ class _RewardScreenState extends State<RewardScreen>
           constraints: BoxConstraints(
             maxHeight: MediaQuery.of(context).size.height,
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _buildTabBar(),
-              customVerticalSpace(height: 16),
-              _buildPointCard(context),
-              customVerticalSpace(height: 8),
-              _buildTabBarView(),
-            ],
-          ),
+          child: isShimmer
+              ? _buildShimmer()
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    _buildTabBar(),
+                    customVerticalSpace(height: 16),
+                    _buildPointCard(context),
+                    customVerticalSpace(height: 8),
+                    _buildTabBarView(),
+                  ],
+                ),
         ),
       ),
+    );
+  }
+
+  Column _buildShimmer() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        shimmerTabBar(),
+        customVerticalSpace(height: 16),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: shimmerBanner(),
+        ),
+        customVerticalSpace(height: 8),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: customText(
+            customTextValue: 'Recommended For You',
+            customTextStyle: heading2,
+          ),
+        ),
+        // shimmerHorizontalListView(),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: customText(
+            customTextValue: 'Favorite Rewards',
+            customTextStyle: heading2,
+          ),
+        ),
+        customVerticalListView(),
+      ],
     );
   }
 

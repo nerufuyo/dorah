@@ -52,16 +52,13 @@ class _AccountScreenState extends State<AccountScreen> {
                             children: [
                               Row(
                                 children: [
-                                  Container(
-                                    width: 60,
-                                    height: 60,
-                                    decoration: const BoxDecoration(
-                                      color: primary60,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: const Icon(
-                                      Icons.person,
-                                      color: Colors.white,
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(60),
+                                    child: Image.asset(
+                                      snapshot.data!.image,
+                                      width: 60,
+                                      height: 60,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   Column(

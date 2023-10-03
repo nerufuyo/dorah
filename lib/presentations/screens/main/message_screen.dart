@@ -9,8 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
 
 class MessageScreen extends StatefulWidget {
-  const MessageScreen({super.key});
+  const MessageScreen({super.key, required this.userId});
   static const routeName = '/message-screen';
+  final String userId;
 
   @override
   State<MessageScreen> createState() => _MessageScreenState();
@@ -105,7 +106,10 @@ class _MessageScreenState extends State<MessageScreen> {
                   onTap: () => Navigator.pushNamed(
                     context,
                     MessageInputScreen.routeName,
-                    arguments: {'userId': userLists[messageIndex]['id']},
+                    arguments: {
+                      'userId': widget.userId,
+                      'userTargetId': userLists[messageIndex]['id'],
+                    },
                   ),
                   child: ListTile(
                     leading: ClipRRect(

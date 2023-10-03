@@ -8,8 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MessageInputScreen extends StatefulWidget {
-  const MessageInputScreen({super.key, required this.userId});
+  const MessageInputScreen({
+    super.key,
+    required this.userTargetId,
+    required this.userId,
+  });
   static const routeName = '/message-input-screen';
+  final String userTargetId;
   final String userId;
 
   @override
@@ -18,22 +23,40 @@ class MessageInputScreen extends StatefulWidget {
 
 class _MessageInputScreenState extends State<MessageInputScreen> {
   final TextEditingController messageController = TextEditingController();
+  final Map<String, String> profileInfo = {};
   final Map<String, String> userInfo = {};
-  final Map<String, String> chatInfo = {};
+  final List<Map<String, String>> chats = [];
   String chatId = 'CD001';
+  int initialIndex = 0;
 
   void fetchData() async {
-    final user = await Repository().getRequestByID(id: widget.userId);
+    final profile = await Repository().getUserById(id: widget.userId);
+    final user = await Repository().getRequestByID(id: widget.userTargetId);
     final chat = await Repository().getMessageById(id: chatId);
 
     setState(() {
-      userInfo.addAll({'id': user.id, 'name': user.name, 'image': user.image});
+      profileInfo.addAll({
+        'id': profile.id,
+        'name': profile.name,
+        'image': profile.image,
+      });
+      userInfo.addAll({
+        'id': user.id,
+        'name': user.name,
+        'image': user.image,
+      });
       chatId = chat.id;
-      chatInfo.addAll({
-        'id': chat.id,
-        'ask': chat.ask,
-        'answer': chat.answer,
-        'createDate': chat.createDate,
+      chats.addAll({
+        {
+          'id': '${initialIndex++}',
+          'ask': chat.ask,
+        }
+      });
+      chats.addAll({
+        {
+          'id': '${initialIndex++}',
+          'answer': chat.answer,
+        }
       });
     });
   }
@@ -48,48 +71,121 @@ class _MessageInputScreenState extends State<MessageInputScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildHeader(context),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [],
-        ),
-      ),
-      bottomSheet: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 80,
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 8,
-              offset: const Offset(0, -4),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: List.generate(
+            chats.length,
+            (index) => Align(
+              alignment: chats[index]['answer'] != null
+                  ? Alignment.centerRight
+                  : Alignment.centerLeft,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.75,
+                child: Row(
+                  mainAxisAlignment: chats[index]['answer'] != null
+                      ? MainAxisAlignment.end
+                      : MainAxisAlignment.start,
+                  children: [
+                    Visibility(
+                      visible: chats[index]['ask'] != null,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.network(
+                          userInfo['image'] ?? '',
+                          width: 40,
+                          height: 40,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      decoration: BoxDecoration(
+                        color: chats[index]['answer'] != null
+                            ? primary60
+                            : primary10,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8,
+                      ),
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 4,
+                        horizontal: 8,
+                      ),
+                      child: customText(
+                        customTextValue:
+                            chats[index]['answer'] ?? chats[index]['ask'] ?? '',
+                        customTextStyle: heading5.copyWith(
+                            color: chats[index]['answer'] != null
+                                ? Colors.white
+                                : text60),
+                      ),
+                    ),
+                    Visibility(
+                      visible: chats[index]['answer'] != null,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.asset(
+                          profileInfo['image'] ?? '',
+                          width: 40,
+                          height: 40,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ],
+          ),
         ),
-        child: _buildMessageInput(),
       ),
+      bottomSheet: _buildInputMessage(context),
     );
   }
 
-  TextField _buildMessageInput() {
-    return TextField(
-      controller: messageController,
-      decoration: InputDecoration(
-        isDense: true,
-        hintText: 'Type something here',
-        hintStyle: body2.copyWith(color: text60),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(color: text30),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(color: primary60),
+  Container _buildInputMessage(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 80,
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 8,
+            offset: const Offset(0, -4),
+          ),
+        ],
+      ),
+      child: TextField(
+        controller: messageController,
+        onSubmitted: (value) {
+          setState(() {
+            chats.addAll({
+              {'id': '${initialIndex++}', 'answer': value}
+            });
+          });
+          messageController.clear();
+        },
+        decoration: InputDecoration(
+          isDense: true,
+          hintText: 'Type something here',
+          hintStyle: body2.copyWith(color: text60),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+            borderSide: const BorderSide(color: text30),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+            borderSide: const BorderSide(color: primary60),
+          ),
         ),
       ),
     );

@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
     final List screenLists = [
       HomeScreen(userId: widget.userId),
       const RewardScreen(),
-      const MessageScreen(),
+      MessageScreen(userId: widget.userId),
       const TicketScreen(),
       AccountScreen(userId: widget.userId),
     ];

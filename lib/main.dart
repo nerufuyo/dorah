@@ -84,8 +84,10 @@ class MyApp extends StatelessWidget {
                   return FadeTransition(opacity: animation, child: child);
                 });
           case MessageScreen.routeName:
+            final args = settings.arguments as Map<String, dynamic>;
+            final userId = args['userId'];
             return PageRouteBuilder(
-                pageBuilder: (_, __, ___) => const MessageScreen(),
+                pageBuilder: (_, __, ___) => MessageScreen(userId: userId),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);
@@ -109,9 +111,13 @@ class MyApp extends StatelessWidget {
 
           case MessageInputScreen.routeName:
             final args = settings.arguments as Map<String, dynamic>;
+            final userTargetId = args['userTargetId'];
             final userId = args['userId'];
             return PageRouteBuilder(
-                pageBuilder: (_, __, ___) => MessageInputScreen(userId: userId),
+                pageBuilder: (_, __, ___) => MessageInputScreen(
+                      userTargetId: userTargetId,
+                      userId: userId,
+                    ),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);

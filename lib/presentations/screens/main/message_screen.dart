@@ -1,5 +1,6 @@
 import 'package:dorah/data/repository/repository.dart';
 import 'package:dorah/data/utils/format.dart';
+import 'package:dorah/presentations/screens/message/message_input_screen.dart';
 import 'package:dorah/presentations/widgets/components.dart';
 import 'package:dorah/presentations/widgets/shimmer.dart';
 import 'package:dorah/styles/pallet.dart';
@@ -101,7 +102,11 @@ class _MessageScreenState extends State<MessageScreen> {
           itemBuilder: (context, messageIndex) => isShimmer
               ? shimmerListView()
               : InkWell(
-                  onTap: () {},
+                  onTap: () => Navigator.pushNamed(
+                    context,
+                    MessageInputScreen.routeName,
+                    arguments: {'userId': userLists[messageIndex]['id']},
+                  ),
                   child: ListTile(
                     leading: ClipRRect(
                       borderRadius: BorderRadius.circular(80),
@@ -131,18 +136,23 @@ class _MessageScreenState extends State<MessageScreen> {
                               messageLists[messageIndex]['createDate']!),
                           customTextStyle: body2.copyWith(color: text40),
                         ),
-                        Container(
-                          decoration: const BoxDecoration(
-                            color: primary60,
-                            shape: BoxShape.circle,
-                          ),
-                          padding: const EdgeInsets.all(4),
-                          child: customText(
-                            customTextValue: messageLists[messageIndex]['ask']!
-                                .length
-                                .toString(),
-                            customTextStyle:
-                                heading5.copyWith(color: Colors.white),
+                        Visibility(
+                          visible:
+                              messageLists[messageIndex]['answer']!.isNotEmpty,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: primary60,
+                              shape: BoxShape.circle,
+                            ),
+                            padding: const EdgeInsets.all(4),
+                            child: customText(
+                              customTextValue: messageLists[messageIndex]
+                                      ['ask']!
+                                  .length
+                                  .toString(),
+                              customTextStyle:
+                                  heading5.copyWith(color: Colors.white),
+                            ),
                           ),
                         ),
                       ],

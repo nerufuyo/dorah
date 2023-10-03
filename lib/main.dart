@@ -6,6 +6,7 @@ import 'package:dorah/presentations/screens/main/main_screen.dart';
 import 'package:dorah/presentations/screens/main/message_screen.dart';
 import 'package:dorah/presentations/screens/main/reward_screen.dart';
 import 'package:dorah/presentations/screens/main/ticket.screen.dart';
+import 'package:dorah/presentations/screens/message/message_input_screen.dart';
 import 'package:dorah/presentations/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -101,6 +102,16 @@ class MyApp extends StatelessWidget {
             final userId = args['userId'];
             return PageRouteBuilder(
                 pageBuilder: (_, __, ___) => AccountScreen(userId: userId),
+                transitionDuration: const Duration(milliseconds: 300),
+                transitionsBuilder: (_, animation, __, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                });
+
+          case MessageInputScreen.routeName:
+            final args = settings.arguments as Map<String, dynamic>;
+            final userId = args['userId'];
+            return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => MessageInputScreen(userId: userId),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);

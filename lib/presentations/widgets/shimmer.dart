@@ -216,3 +216,54 @@ GridView customVerticalListView() {
         )),
   );
 }
+
+Shimmer shimmerHeaderWithBloodType() {
+  return Shimmer.fromColors(
+    baseColor: primary10,
+    highlightColor: primary30,
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              width: 60,
+              height: 60,
+              decoration: const BoxDecoration(
+                color: primary10,
+                shape: BoxShape.circle,
+              ),
+            ),
+            customHorizontalSpace(width: 16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(
+                2,
+                (index) => Container(
+                  height: 16,
+                  width: index == 0 ? 120 : 80,
+                  decoration: BoxDecoration(
+                    color: primary10,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  margin: const EdgeInsets.symmetric(vertical: 2),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Container(
+          width: 52,
+          height: 52,
+          decoration: const BoxDecoration(
+            color: primary10,
+            shape: BoxShape.circle,
+          ),
+        ),
+      ],
+    ),
+  );
+}

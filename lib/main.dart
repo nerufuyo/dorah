@@ -8,6 +8,7 @@ import 'package:dorah/presentations/screens/main/reward_screen.dart';
 import 'package:dorah/presentations/screens/main/ticket.screen.dart';
 import 'package:dorah/presentations/screens/message/message_input_screen.dart';
 import 'package:dorah/presentations/screens/splash/splash_screen.dart';
+import 'package:dorah/presentations/screens/transaction/donate_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -118,6 +119,16 @@ class MyApp extends StatelessWidget {
                       userTargetId: userTargetId,
                       userId: userId,
                     ),
+                transitionDuration: const Duration(milliseconds: 300),
+                transitionsBuilder: (_, animation, __, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                });
+
+          case DonateScreen.routeName:
+            final args = settings.arguments as Map<String, dynamic>;
+            final userId = args['userId'];
+            return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => DonateScreen(userId: userId),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);

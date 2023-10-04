@@ -71,74 +71,83 @@ class _MessageInputScreenState extends State<MessageInputScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildHeader(context),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: List.generate(
-            chats.length,
-            (index) => Align(
-              alignment: chats[index]['answer'] != null
-                  ? Alignment.centerRight
-                  : Alignment.centerLeft,
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.75,
-                child: Row(
-                  mainAxisAlignment: chats[index]['answer'] != null
-                      ? MainAxisAlignment.end
-                      : MainAxisAlignment.start,
-                  children: [
-                    Visibility(
-                      visible: chats[index]['ask'] != null,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.network(
-                          userInfo['image'] ?? '',
-                          width: 40,
-                          height: 40,
-                          fit: BoxFit.cover,
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height * 0.775,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: List.generate(
+              chats.length,
+              (index) => Align(
+                alignment: chats[index]['answer'] != null
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.75,
+                  child: Row(
+                    mainAxisAlignment: chats[index]['answer'] != null
+                        ? MainAxisAlignment.end
+                        : MainAxisAlignment.start,
+                    children: [
+                      Visibility(
+                        visible: chats[index]['ask'] != null,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(40),
+                          child: Image.network(
+                            userInfo['image'] ?? '',
+                            width: 40,
+                            height: 40,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.6,
-                      decoration: BoxDecoration(
-                        color: chats[index]['answer'] != null
-                            ? primary60
-                            : primary10,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 8,
-                      ),
-                      margin: const EdgeInsets.symmetric(
-                        vertical: 4,
-                        horizontal: 8,
-                      ),
-                      child: customText(
-                        customTextValue:
-                            chats[index]['answer'] ?? chats[index]['ask'] ?? '',
-                        customTextStyle: heading5.copyWith(
+                      ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 0.6,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
                             color: chats[index]['answer'] != null
-                                ? Colors.white
-                                : text60),
-                      ),
-                    ),
-                    Visibility(
-                      visible: chats[index]['answer'] != null,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          profileInfo['image'] ?? '',
-                          width: 40,
-                          height: 40,
-                          fit: BoxFit.cover,
+                                ? primary60
+                                : primary10,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 8,
+                          ),
+                          margin: const EdgeInsets.symmetric(
+                            vertical: 4,
+                            horizontal: 8,
+                          ),
+                          child: customText(
+                            customTextValue: chats[index]['answer'] ??
+                                chats[index]['ask'] ??
+                                '',
+                            customTextStyle: heading5.copyWith(
+                                color: chats[index]['answer'] != null
+                                    ? Colors.white
+                                    : text60),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      Visibility(
+                        visible: chats[index]['answer'] != null,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(40),
+                          child: Image.asset(
+                            profileInfo['image'] ?? '',
+                            width: 40,
+                            height: 40,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

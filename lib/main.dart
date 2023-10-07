@@ -110,6 +110,7 @@ class MyApp extends StatelessWidget {
                   return FadeTransition(opacity: animation, child: child);
                 });
 
+          // Commit message
           case MessageInputScreen.routeName:
             final args = settings.arguments as Map<String, dynamic>;
             final userTargetId = args['userTargetId'];

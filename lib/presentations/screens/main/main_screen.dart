@@ -11,21 +11,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+  const MainScreen({super.key, required this.userId});
   static const routeName = '/main-screen';
+  final String userId;
 
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final List screenLists = [
-    const HomeScreen(),
-    const RewardScreen(),
-    const MessageScreen(),
-    const TicketScreen(),
-    const AccountScreen(),
-  ];
   int currentIndex = 0;
 
   void onTapBottomNavigation(int index) {
@@ -34,6 +28,14 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final List screenLists = [
+      HomeScreen(userId: widget.userId),
+      const RewardScreen(),
+      MessageScreen(userId: widget.userId),
+      const TicketScreen(),
+      AccountScreen(userId: widget.userId),
+    ];
+
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(

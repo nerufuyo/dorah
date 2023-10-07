@@ -56,7 +56,7 @@ class Repository {
     return requests;
   }
 
-  Future<Requests> geRequestByID({required String id}) async {
+  Future<Requests> getRequestByID({required String id}) async {
     final response =
         await rootBundle.loadString('lib/assets/json/request.json');
 
@@ -113,6 +113,18 @@ class Repository {
       messages.add(Message.fromJson(item));
     }
     return messages;
+  }
+
+  Future<Message> getMessageById({required id}) async {
+    final response =
+        await rootBundle.loadString('lib/assets/json/message.json');
+
+    final data = json.decode(response)['messages'];
+    final List<Message> messages = [];
+    for (var item in data) {
+      messages.add(Message.fromJson(item));
+    }
+    return messages.firstWhere((element) => element.id == id);
   }
 
   Future<List<Country>> getCountryCodes() async {

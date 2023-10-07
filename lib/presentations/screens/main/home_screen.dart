@@ -5,6 +5,7 @@ import 'package:dorah/data/repository/repository.dart';
 import 'package:dorah/data/utils/format.dart';
 import 'package:dorah/data/utils/greetings.dart';
 import 'package:dorah/presentations/widgets/components.dart';
+import 'package:dorah/presentations/widgets/shimmer.dart';
 import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
 import 'package:flutter/material.dart';
@@ -12,57 +13,109 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.userId});
   static const routeName = '/home-screen';
+  final String userId;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isShimmer = true;
+
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() => isShimmer = false);
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              _buildHeader(),
-              customVerticalSpace(height: 16),
-              SvgPicture.asset('lib/assets/images/imageBanner.svg'),
-              customVerticalSpace(height: 16),
-              customText(
-                customTextValue: 'What Would You Do?',
-                customTextStyle: heading2,
-              ),
-              customVerticalSpace(height: 16),
-              _buildCategory(),
-              customVerticalSpace(height: 16),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  customText(
-                    customTextValue: 'Help Us',
-                    customTextStyle: heading2,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: customText(
-                        customTextValue: 'View More',
-                        customTextStyle: body2.copyWith(color: secondary60)),
-                  ),
-                ],
-              ),
-              customVerticalSpace(height: 16),
-              _buildRequest(),
-            ],
-          ),
+          child: isShimmer
+              ? _buildShimmer()
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    _buildHeader(),
+                    customVerticalSpace(height: 16),
+                    SvgPicture.asset('lib/assets/images/imageBanner.svg'),
+                    customVerticalSpace(height: 16),
+                    customText(
+                      customTextValue: 'What Would You Do?',
+                      customTextStyle: heading2,
+                    ),
+                    customVerticalSpace(height: 16),
+                    _buildCategory(),
+                    customVerticalSpace(height: 16),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        customText(
+                          customTextValue: 'Help Us',
+                          customTextStyle: heading2,
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: customText(
+                              customTextValue: 'View More',
+                              customTextStyle:
+                                  body2.copyWith(color: secondary60)),
+                        ),
+                      ],
+                    ),
+                    customVerticalSpace(height: 16),
+                    _buildRequest(),
+                  ],
+                ),
         ),
       ),
+    );
+  }
+
+  Column _buildShimmer() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        shimmerCustomAppBar(),
+        customVerticalSpace(height: 16),
+        shimmerBanner(),
+        customVerticalSpace(height: 16),
+        customText(
+          customTextValue: 'What Would You Do?',
+          customTextStyle: heading2,
+        ),
+        customVerticalSpace(height: 16),
+        shimmerGridCategory(),
+        customVerticalSpace(height: 16),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            customText(
+              customTextValue: 'Help Us',
+              customTextStyle: heading2,
+            ),
+            TextButton(
+              onPressed: () {},
+              child: customText(
+                  customTextValue: 'View More',
+                  customTextStyle: body2.copyWith(color: secondary60)),
+            ),
+          ],
+        ),
+        customVerticalSpace(height: 16),
+        shimmerListView(),
+      ],
     );
   }
 
@@ -234,31 +287,47 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Row _buildHeader() {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            customText(
-              customTextValue: getGreeting(),
-              customTextStyle: body2,
-            ),
-            customVerticalSpace(height: 4),
-            customText(
-              customTextValue: 'Alucard Parker',
-              customTextStyle: heading4,
-            ),
-          ],
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset('lib/assets/icons/bell_outlined.svg'),
-        ),
-      ],
+  FutureBuilder _buildHeader() {
+    return FutureBuilder(
+      future: Repository().getUserById(id: widget.userId),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  customText(
+                    customTextValue: getGreeting(),
+                    customTextStyle: body2,
+                  ),
+                  customVerticalSpace(height: 4),
+                  customText(
+                    customTextValue: snapshot.data!.name,
+                    customTextStyle: heading4,
+                  ),
+                ],
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: SvgPicture.asset('lib/assets/icons/bell_outlined.svg'),
+              ),
+            ],
+          );
+        } else if (snapshot.hasError) {
+          return customText(
+            customTextValue: 'Error: ${snapshot.error}',
+            customTextStyle: body2,
+          );
+        } else {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+      },
     );
   }
 }

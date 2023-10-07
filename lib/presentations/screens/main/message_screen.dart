@@ -1,14 +1,17 @@
 import 'package:dorah/data/repository/repository.dart';
 import 'package:dorah/data/utils/format.dart';
+import 'package:dorah/presentations/screens/message/message_input_screen.dart';
 import 'package:dorah/presentations/widgets/components.dart';
+import 'package:dorah/presentations/widgets/shimmer.dart';
 import 'package:dorah/styles/pallet.dart';
 import 'package:dorah/styles/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:localstorage/localstorage.dart';
 
 class MessageScreen extends StatefulWidget {
-  const MessageScreen({super.key});
+  const MessageScreen({super.key, required this.userId});
   static const routeName = '/message-screen';
+  final String userId;
 
   @override
   State<MessageScreen> createState() => _MessageScreenState();
@@ -19,6 +22,7 @@ class _MessageScreenState extends State<MessageScreen> {
   final List<Map<String, String>> userLists = [];
   final List<Map<String, String>> messageLists = [];
   String chatId = '';
+  bool isShimmer = true;
 
   void fecthData() async {
     final userResponse = await Repository().getRequests();
@@ -77,6 +81,8 @@ class _MessageScreenState extends State<MessageScreen> {
 
   @override
   void initState() {
+    Future.delayed(
+        const Duration(seconds: 1), () => setState(() => isShimmer = false));
     loadLocalStorage();
     fecthData();
     super.initState();
@@ -94,50 +100,69 @@ class _MessageScreenState extends State<MessageScreen> {
           scrollDirection: Axis.vertical,
           separatorBuilder: (context, index) => customVerticalSpace(height: 8),
           itemCount: userLists.length,
-          itemBuilder: (context, messageIndex) => ListTile(
-            leading: ClipRRect(
-              borderRadius: BorderRadius.circular(80),
-              child: Image.network(
-                userLists[messageIndex]['image']!,
-                width: 48,
-                height: 48,
-                fit: BoxFit.cover,
-              ),
-            ),
-            title: customText(
-              customTextValue: userLists[messageIndex]['name']!,
-              customTextStyle: heading3,
-            ),
-            subtitle: customText(
-              customTextValue: messageLists[messageIndex]['ask']!,
-              customTextStyle: body2.copyWith(color: text40),
-              customMaxLines: 1,
-              customTextOverflow: TextOverflow.ellipsis,
-            ),
-            trailing: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                customText(
-                  customTextValue:
-                      formatTimeAgo(messageLists[messageIndex]['createDate']!),
-                  customTextStyle: body2.copyWith(color: text40),
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: primary60,
-                    shape: BoxShape.circle,
+          itemBuilder: (context, messageIndex) => isShimmer
+              ? shimmerListView()
+              : InkWell(
+                  onTap: () => Navigator.pushNamed(
+                    context,
+                    MessageInputScreen.routeName,
+                    arguments: {
+                      'userId': widget.userId,
+                      'userTargetId': userLists[messageIndex]['id'],
+                    },
                   ),
-                  padding: const EdgeInsets.all(4),
-                  child: customText(
-                    customTextValue:
-                        messageLists[messageIndex]['ask']!.length.toString(),
-                    customTextStyle: heading5.copyWith(color: Colors.white),
+                  child: ListTile(
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(80),
+                      child: Image.network(
+                        userLists[messageIndex]['image']!,
+                        width: 48,
+                        height: 48,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    title: customText(
+                      customTextValue: userLists[messageIndex]['name']!,
+                      customTextStyle: heading3,
+                    ),
+                    subtitle: customText(
+                      customTextValue: messageLists[messageIndex]['ask']!,
+                      customTextStyle: body2.copyWith(color: text40),
+                      customMaxLines: 1,
+                      customTextOverflow: TextOverflow.ellipsis,
+                    ),
+                    trailing: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        customText(
+                          customTextValue: formatTimeAgo(
+                              messageLists[messageIndex]['createDate']!),
+                          customTextStyle: body2.copyWith(color: text40),
+                        ),
+                        Visibility(
+                          visible:
+                              messageLists[messageIndex]['answer']!.isNotEmpty,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: primary60,
+                              shape: BoxShape.circle,
+                            ),
+                            padding: const EdgeInsets.all(4),
+                            child: customText(
+                              customTextValue: messageLists[messageIndex]
+                                      ['ask']!
+                                  .length
+                                  .toString(),
+                              customTextStyle:
+                                  heading5.copyWith(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ],
-            ),
-          ),
         ),
       ),
     );

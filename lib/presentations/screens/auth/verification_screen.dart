@@ -10,11 +10,13 @@ class VerificationScreen extends StatefulWidget {
     required this.loginMethod,
     required this.loginInput,
     required this.verificationId,
+    required this.userId,
   });
   static const routeName = '/verification-screen';
   final String loginMethod;
   final String loginInput;
   final String verificationId;
+  final String userId;
 
   @override
   State<VerificationScreen> createState() => _VerificationScreenState();
@@ -160,7 +162,11 @@ class _VerificationScreenState extends State<VerificationScreen> {
                             'Please enter the verification code.');
                       } else {
                         setState(() => errorMessage = '');
-                        Navigator.pushNamed(context, MainScreen.routeName);
+                        Navigator.pushNamed(
+                          context,
+                          MainScreen.routeName,
+                          arguments: {'userId': widget.userId},
+                        );
                       }
                     },
                     customButtonTextValue: 'Continue',

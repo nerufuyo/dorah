@@ -21,6 +21,7 @@ dependencies:
   intl: ^0.18.1
   timeago: ^3.5.0
   localstorage: ^4.0.1+4
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

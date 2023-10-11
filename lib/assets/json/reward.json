@@ -1,0 +1,354 @@
+{
+    "rewards": [
+        {
+            "id": "001",
+            "title": "$10 Amazon Gift Card",
+            "points": 500,
+            "image_url": "https://kosheronabudget.com/wp-content/uploads/2020/10/147690327_s.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "002",
+            "title": "Movie Night - 2 Tickets",
+            "points": 1000,
+            "image_url": "https://img.mlbstatic.com/milb-images/image/private/t_2x1/t_w1536/milb/a8rwmwh7mx9bqtecywra.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "003",
+            "title": "Starbucks Coffee Voucher",
+            "points": 750,
+            "image_url": "https://1.bp.blogspot.com/-Zv2t4kgJnZY/XaRnaF-Z1PI/AAAAAAAAAZc/XFd2JQ5CnJsxnFXGGuPxvHiORlPfx_TPQCNcBGAsYHQ/w1200-h630-p-k-no-nu/nppOa7s.jpeg",
+            "category": "Superhero"
+        },
+        {
+            "id": "004",
+            "title": "Fitness Class Pass",
+            "points": 800,
+            "image_url": "https://i.pinimg.com/originals/85/4d/d1/854dd187adf9efea64c80c729593bce2.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "005",
+            "title": "Weekend Getaway Package",
+            "points": 1500,
+            "image_url": "https://laspalomasresort.net/eng/wp-content/uploads/2020/10/break-1092x1092.jpeg",
+            "category": "Legendary"
+        },
+        {
+            "id": "006",
+            "title": "1 Month Spotify Premium",
+            "points": 400,
+            "image_url": "https://cdn.shopify.com/s/files/1/0267/6935/8923/products/spotify-card_2000x.png?v=1591691902",
+            "category": "Hero"
+        },
+        {
+            "id": "007",
+            "title": "Customized Phone Case",
+            "points": 600,
+            "image_url": "https://ae01.alicdn.com/kf/HTB1mdE.MNYaK1RjSZFnq6y80pXa6/Custom-Tempered-Glass-Phone-Case-For-iPhone-XS-MAX-XR-5-5S-SE-case-Rick-and.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "008",
+            "title": "Cooking Class for Two",
+            "points": 750,
+            "image_url": "http://napavalleylife.com/wp-content/uploads/2017/08/Cooking-Classes-Meritage-Resort-1.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "009",
+            "title": "$25 Uber Eats Gift Card",
+            "points": 1200,
+            "image_url": "https://prod-cs-gft-static.s3.amazonaws.com/wp-content/uploads/2022/09/08101142/25-uber-eats-gift-card.jpeg",
+            "category": "Legendary"
+        },
+        {
+            "id": "010",
+            "title": "Adventure Park Pass",
+            "points": 1500,
+            "image_url": "https://sf-static.sixflags.com/wp-content/uploads/sfgd-3park-pass-1024x576.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "011",
+            "title": "Spa Day Package",
+            "points": 400,
+            "image_url": "https://heavenlysensations.co.uk/wp-content/uploads/2019/10/the-best-spa-day-package-deals-in-fife.jpg",
+            "category": "Hero"
+        },
+        {
+            "id": "012",
+            "title": "3-Month Netflix Subscription",
+            "points": 600,
+            "image_url": "https://www.oerlive.com/wp-content/uploads/2019/06/netflix.jpg",
+            "category": "Hero"
+        },
+        {
+            "id": "013",
+            "title": "Home Decor Gift Set",
+            "points": 1000,
+            "image_url": "https://homebnc.com/homeimg/2020/09/personalized-home-decor-gift-ideas-featured-homebnc.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "014",
+            "title": "Virtual Reality Headset",
+            "points": 450,
+            "image_url": "https://www.thepcwholesale.com/wp-content/uploads/2020/11/87222846_6494375473.jpg",
+            "category": "Hero"
+        },
+        {
+            "id": "015",
+            "title": "Bookstore Gift Card",
+            "points": 600,
+            "image_url": "https://www.griffinbaybook.com/sites/griffinbaybook.com/files/GX00000001.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "016",
+            "title": "Concert Tickets (2)",
+            "points": 800,
+            "image_url": "https://images.template.net/wp-content/uploads/2018/09/Music-Concert-Ticket-Sample.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "017",
+            "title": "Smartwatch",
+            "points": 1000,
+            "image_url": "https://miro.medium.com/v2/resize:fit:1736/0*6PxAADzstr31By24.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "018",
+            "title": "Language Learning App Subscription",
+            "points": 750,
+            "image_url": "https://cdn.wccftech.com/wp-content/uploads/2021/05/Babbel.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "019",
+            "title": "Home Theater System",
+            "points": 1500,
+            "image_url": "https://2.bp.blogspot.com/-d5Lgv3VwGM0/VqZdN4x0TuI/AAAAAAAAiAs/IaO95f-Yors/s1600/home-theater-systems-design-l-7d77fa04c7a73bb8.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "020",
+            "title": "Weekend Yoga Retreat",
+            "points": 1200,
+            "image_url": "https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/62/2019/11/Best-yoga-retreats-UK-e1575057330741-1920x1080.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "021",
+            "title": "Gourmet Cooking Class",
+            "points": 750,
+            "image_url": "https://gourmetwarehouse.ca/product_images/uploaded_images/banner-cooking-classes.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "022",
+            "title": "Virtual Assistant Device",
+            "points": 1000,
+            "image_url": "https://hips.hearstapps.com/gearpatrol/gearpatrol/wp-content/uploads/2017/07/how-a-virtual-assistant-works-gear-patrol-full-lead.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "023",
+            "title": "Art Supplies Set",
+            "points": 600,
+            "image_url": "https://ae01.alicdn.com/kf/HTB1hAjzXyzxK1RkSnaVq6xn9VXat/Portable-Kids-Art-Supplies-Set-Drawing-Painting-Pencil-Kit-with-Aluminium-Storage-Box-for-Children-Painting.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "024",
+            "title": "$50 Restaurant Gift Card",
+            "points": 500,
+            "image_url": "https://d2j6dbq0eux0bg.cloudfront.net/images/54926209/2144662095.jpg",
+            "category": "Hero"
+        },
+        {
+            "id": "025",
+            "title": "Premium Headphones",
+            "points": 800,
+            "image_url": "https://cdn-s3.touchofmodern.com/products/000/392/301/41bc88c16acf0a139978c830090b41c1_large.jpg?1456873976",
+            "category": "Legendary"
+        },
+        {
+            "id": "026",
+            "title": "Wine Tasting Experience",
+            "points": 750,
+            "image_url": "https://image.rush49.com/rush49/images/winetastingclubcard-web1574872883.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "027",
+            "title": "Portable Bluetooth Speaker",
+            "points": 600,
+            "image_url": "http://st.lowrider.com/uploads/sites/7/2016/03/portable-bluetooth-speakers-jbl-charge-2-005.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "028",
+            "title": "Outdoor Camping Gear",
+            "points": 1500,
+            "image_url": "https://cdn.vox-cdn.com/thumbor/d4lSsUYTxE8htALiI-YIH8AjeOs=/0x0:2039x1359/1280x854/cdn.vox-cdn.com/uploads/chorus_image/image/50484335/vpavic_160816_1188_0094.0.0.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "029",
+            "title": "Language Translation Device",
+            "points": 1000,
+            "image_url": "https://cdn.mos.cms.futurecdn.net/m7qSE7tRh9u3Y4mH7xXvJP.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "030",
+            "title": "DIY Home Improvement Kit",
+            "points": 600,
+            "image_url": "https://admin.azbigmedia.com/wp-content/uploads/2020/08/Home-Improvement-Projects.png",
+            "category": "Hero"
+        },
+        {
+            "id": "031",
+            "title": "Gym Membership (1 month)",
+            "points": 300,
+            "image_url": "https://sportandspinalphysio.com.au/wp-content/uploads/2015/10/Gym-membership-Main.jpg",
+            "category": "Hero"
+        },
+        {
+            "id": "032",
+            "title": "Movie Streaming Subscription (3 months)",
+            "points": 700,
+            "image_url": "https://watchbestiptv.com/wp-content/uploads/2019/05/3-Months.png",
+            "category": "Superhero"
+        },
+        {
+            "id": "033",
+            "title": "Tech Gadgets Mystery Box",
+            "points": 1100,
+            "image_url": "https://s.yimg.com/os/creatr-uploaded-images/2022-03/091a4530-af6f-11ec-bfb9-99d82332769f",
+            "category": "Legendary"
+        },
+        {
+            "id": "034",
+            "title": "Online Course Enrollment",
+            "points": 400,
+            "image_url": "https://benisnous.com/wp-content/uploads/2021/01/Udemy-Free-Online-Courses-with-Certificate-Udemy-100-OFF.jpg",
+            "category": "Hero"
+        },
+        {
+            "id": "035",
+            "title": "$15 Starbucks Gift Card",
+            "points": 750,
+            "image_url": "https://prod-cs-gft-static.s3.amazonaws.com/wp-content/uploads/2022/08/16132726/15-starbucks-gift-card.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "036",
+            "title": "Luxury Spa Weekend",
+            "points": 2000,
+            "image_url": "https://www.bowfieldhotel.co.uk/wp-content/uploads/2019/04/Bowfield-Hydrotherapy-Spa-1-featured-800x423.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "037",
+            "title": "Wireless Earbuds",
+            "points": 350,
+            "image_url": "https://images-na.ssl-images-amazon.com/images/I/71xvfA4ozZL._SL1500_.jpg",
+            "category": "Hero"
+        },
+        {
+            "id": "038",
+            "title": "Concert VIP Pass",
+            "points": 900,
+            "image_url": "http://1.bp.blogspot.com/_VmHPnaDNIqg/S99BJ7iYTDI/AAAAAAAAAOk/hX2m4JQInls/s1600/Larson-King.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "039",
+            "title": "Smart Home Starter Kit",
+            "points": 1300,
+            "image_url": "https://static01.nyt.com/images/2020/09/16/oakImage-1600280032306/oakImage-1600280032306-videoSixteenByNine3000.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "040",
+            "title": "$20 Amazon Gift Card",
+            "points": 900,
+            "image_url": "https://kosheronabudget.com/wp-content/uploads/2020/10/147690327_s.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "041",
+            "title": "Language Immersion Trip",
+            "points": 2500,
+            "image_url": "https://ksspreschool.com/wp-content/uploads/2015/01/DSC00388.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "042",
+            "title": "Home Office Upgrade Bundle",
+            "points": 600,
+            "image_url": "https://chromebuzz.files.wordpress.com/2015/04/36664-fresh-home-office-design.jpg",
+            "category": "Hero"
+        },
+        {
+            "id": "043",
+            "title": "Premium Coffee Maker",
+            "points": 850,
+            "image_url": "https://eu-lights.com/wp-content/uploads/2019/01/pem350-1014x1024.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "044",
+            "title": "Adventure Travel Package",
+            "points": 1800,
+            "image_url": "https://s3.amazonaws.com/images.gearjunkie.com/uploads/2018/01/common-packing-mistakes.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "045",
+            "title": "Yoga and Meditation Retreat",
+            "points": 1200,
+            "image_url": "https://i.pinimg.com/originals/31/9c/c7/319cc7a3326d5ccf41cfea422657b0a7.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "046",
+            "title": "Custom Engraved Jewelry",
+            "points": 400,
+            "image_url": "https://www.2sistershandcrafted.com/sites/2sistershandcrafted.indiemade.com/files/imagecache/im_clientsite_product_zoom/carolyn_necklace_2.jpg",
+            "category": "Hero"
+        },
+        {
+            "id": "047",
+            "title": "Virtual Reality Gaming Console",
+            "points": 950,
+            "image_url": "https://1401700980.rsc.cdn77.org/data/images/full/11628/sony-playstation-vr.jpg?w=570",
+            "category": "Superhero"
+        },
+        {
+            "id": "048",
+            "title": "$25 Restaurant Gift Card",
+            "points": 1200,
+            "image_url": "https://hip2save.com/wp-content/uploads/2013/03/25-gift.jpg",
+            "category": "Superhero"
+        },
+        {
+            "id": "049",
+            "title": "Home Theater Sound System",
+            "points": 1800,
+            "image_url": "https://i.pinimg.com/originals/b9/b8/aa/b9b8aa832f3e93e4c464387d8dda9daa.jpg",
+            "category": "Legendary"
+        },
+        {
+            "id": "050",
+            "title": "Painting Workshop with an Artist",
+            "points": 550,
+            "image_url": "https://images.squarespace-cdn.com/content/v1/5c0f8b05c258b46b5e2f8e76/1545905856278-QCCA1AVIQYJ6QXQ7FEJS/ke17ZwdGBToddI8pDm48kEWP3-hvREnweJ050wvhyvB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdrULnJwJtUwRUNy9fIMUJZw9x8WqpJ4rfPF_qYxQ1vxK19DM50qGfsFZg32uC5Iyw/Facilities-banner-chandler-studio.jpg",
+            "category": "Hero"
+        }
+    ]
+}

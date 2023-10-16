@@ -40,6 +40,8 @@ class MyApp extends StatelessWidget {
                       loginMethod: loginMethod,
                       loginInput: loginInput,
                       verificationId: verificationId,
+                      // TODO: userId: '',
+                      userId: '',
                     ),
                 transitionDuration: const Duration(milliseconds: 300),
                 transitionsBuilder: (_, animation, __, child) {
